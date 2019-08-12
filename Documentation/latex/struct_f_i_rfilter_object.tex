@@ -1,0 +1,101 @@
+\hypertarget{struct_f_i_rfilter_object}{}\section{F\+I\+Rfilter\+Object Struct Reference}
+\label{struct_f_i_rfilter_object}\index{FIRfilterObject@{FIRfilterObject}}
+
+
+Structure containing variables and pointers which should be initialized for every F\+IR filter object only once and must be unchanged during program operation.  
+
+
+
+
+{\ttfamily \#include $<$F\+I\+Rfilter\+Pt\+By\+Pt.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float $\ast$ \mbox{\hyperlink{struct_f_i_rfilter_object_aae0d64d2a7939f8302edb830dc123c86_aae0d64d2a7939f8302edb830dc123c86}{signal\+Buffer}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_f_i_rfilter_object_af41fd03c2023df9d8b4ce391377ef584_af41fd03c2023df9d8b4ce391377ef584}{signal\+Buffer\+Head}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_f_i_rfilter_object_a3c833068892d3855a15079c572c1936c_a3c833068892d3855a15079c572c1936c}{signal\+Buffer\+Mask}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_f_i_rfilter_object_ae88c8be8c92f567c52541641d6cad892_ae88c8be8c92f567c52541641d6cad892}{signal\+Buffer\+Length}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_f_i_rfilter_object_a2e7b6600f7f4a3f9eccd7b7d6c0799a0_a2e7b6600f7f4a3f9eccd7b7d6c0799a0}{coefficients\+Length}}
+\item 
+float $\ast$ \mbox{\hyperlink{struct_f_i_rfilter_object_adc634462fd82995ba67a6a50ce478b6f_adc634462fd82995ba67a6a50ce478b6f}{coefficients}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure containing variables and pointers which should be initialized for every F\+IR filter object only once and must be unchanged during program operation. 
+
+Definition at line 24 of file F\+I\+Rfilter\+Pt\+By\+Pt.\+h.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_f_i_rfilter_object_adc634462fd82995ba67a6a50ce478b6f_adc634462fd82995ba67a6a50ce478b6f}\label{struct_f_i_rfilter_object_adc634462fd82995ba67a6a50ce478b6f_adc634462fd82995ba67a6a50ce478b6f}} 
+\index{FIRfilterObject@{FIRfilterObject}!coefficients@{coefficients}}
+\index{coefficients@{coefficients}!FIRfilterObject@{FIRfilterObject}}
+\subsubsection{\texorpdfstring{coefficients}{coefficients}}
+{\footnotesize\ttfamily float$\ast$ coefficients}
+
+Pointer to array with filter coefficients 
+
+Definition at line 30 of file F\+I\+Rfilter\+Pt\+By\+Pt.\+h.
+
+\mbox{\Hypertarget{struct_f_i_rfilter_object_a2e7b6600f7f4a3f9eccd7b7d6c0799a0_a2e7b6600f7f4a3f9eccd7b7d6c0799a0}\label{struct_f_i_rfilter_object_a2e7b6600f7f4a3f9eccd7b7d6c0799a0_a2e7b6600f7f4a3f9eccd7b7d6c0799a0}} 
+\index{FIRfilterObject@{FIRfilterObject}!coefficientsLength@{coefficientsLength}}
+\index{coefficientsLength@{coefficientsLength}!FIRfilterObject@{FIRfilterObject}}
+\subsubsection{\texorpdfstring{coefficientsLength}{coefficientsLength}}
+{\footnotesize\ttfamily uint16\+\_\+t coefficients\+Length}
+
+Length of array with filter coefficients 
+
+Definition at line 29 of file F\+I\+Rfilter\+Pt\+By\+Pt.\+h.
+
+\mbox{\Hypertarget{struct_f_i_rfilter_object_aae0d64d2a7939f8302edb830dc123c86_aae0d64d2a7939f8302edb830dc123c86}\label{struct_f_i_rfilter_object_aae0d64d2a7939f8302edb830dc123c86_aae0d64d2a7939f8302edb830dc123c86}} 
+\index{FIRfilterObject@{FIRfilterObject}!signalBuffer@{signalBuffer}}
+\index{signalBuffer@{signalBuffer}!FIRfilterObject@{FIRfilterObject}}
+\subsubsection{\texorpdfstring{signalBuffer}{signalBuffer}}
+{\footnotesize\ttfamily float$\ast$ signal\+Buffer}
+
+Pointer to circular buffer which length must be larger than coefficients\+Length and must be a power of 2 
+
+Definition at line 25 of file F\+I\+Rfilter\+Pt\+By\+Pt.\+h.
+
+\mbox{\Hypertarget{struct_f_i_rfilter_object_af41fd03c2023df9d8b4ce391377ef584_af41fd03c2023df9d8b4ce391377ef584}\label{struct_f_i_rfilter_object_af41fd03c2023df9d8b4ce391377ef584_af41fd03c2023df9d8b4ce391377ef584}} 
+\index{FIRfilterObject@{FIRfilterObject}!signalBufferHead@{signalBufferHead}}
+\index{signalBufferHead@{signalBufferHead}!FIRfilterObject@{FIRfilterObject}}
+\subsubsection{\texorpdfstring{signalBufferHead}{signalBufferHead}}
+{\footnotesize\ttfamily uint16\+\_\+t signal\+Buffer\+Head}
+
+Index of the newest element of input signal in signal\+Buffer 
+
+Definition at line 26 of file F\+I\+Rfilter\+Pt\+By\+Pt.\+h.
+
+\mbox{\Hypertarget{struct_f_i_rfilter_object_ae88c8be8c92f567c52541641d6cad892_ae88c8be8c92f567c52541641d6cad892}\label{struct_f_i_rfilter_object_ae88c8be8c92f567c52541641d6cad892_ae88c8be8c92f567c52541641d6cad892}} 
+\index{FIRfilterObject@{FIRfilterObject}!signalBufferLength@{signalBufferLength}}
+\index{signalBufferLength@{signalBufferLength}!FIRfilterObject@{FIRfilterObject}}
+\subsubsection{\texorpdfstring{signalBufferLength}{signalBufferLength}}
+{\footnotesize\ttfamily uint16\+\_\+t signal\+Buffer\+Length}
+
+Length of circular buffer 
+
+Definition at line 28 of file F\+I\+Rfilter\+Pt\+By\+Pt.\+h.
+
+\mbox{\Hypertarget{struct_f_i_rfilter_object_a3c833068892d3855a15079c572c1936c_a3c833068892d3855a15079c572c1936c}\label{struct_f_i_rfilter_object_a3c833068892d3855a15079c572c1936c_a3c833068892d3855a15079c572c1936c}} 
+\index{FIRfilterObject@{FIRfilterObject}!signalBufferMask@{signalBufferMask}}
+\index{signalBufferMask@{signalBufferMask}!FIRfilterObject@{FIRfilterObject}}
+\subsubsection{\texorpdfstring{signalBufferMask}{signalBufferMask}}
+{\footnotesize\ttfamily uint16\+\_\+t signal\+Buffer\+Mask}
+
+Bit mask determined from length of signal\+Buffer 
+
+Definition at line 27 of file F\+I\+Rfilter\+Pt\+By\+Pt.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_f_i_rfilter_pt_by_pt_8h}{F\+I\+Rfilter\+Pt\+By\+Pt.\+h}}\end{DoxyCompactItemize}

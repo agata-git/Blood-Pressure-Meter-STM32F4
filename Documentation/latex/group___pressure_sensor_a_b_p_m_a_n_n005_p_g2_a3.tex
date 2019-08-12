@@ -1,0 +1,128 @@
+\hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3}{}\section{Pressure Sensor A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3}
+\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3}\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+
+
+Module used for initialization I2\+C1 bus used for communication with a piezoresistive silicon pressure sensor from Honeywell Basic Amplified A\+BP Series. Calibrated output values for pressure are updated at approximately 1 k\+Hz for analog and 2 k\+Hz for digital. According to Honeywell Technical note, Honeywell\textquotesingle{}s digital output pressure sensors are designed to work as slaves and will therefore only respond to requests from a master device. Following the address and read bit from the master, Honeywell digital output pressure sensors are designed to output up to 4 bytes of data, depending on the sensor options and the needs of the application. Sensor used in project gives two data bytes that are the compensated pressure output, along with sensor status bits.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga27ad1f279136628679479a5fedb6a94c_ga27ad1f279136628679479a5fedb6a94c}{I2\+C\+\_\+\+S\+D\+A\+\_\+\+P\+O\+RT}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga2cade698267beb86ccaa38c14d35ab0f_ga2cade698267beb86ccaa38c14d35ab0f}{I2\+C\+\_\+\+S\+D\+A\+\_\+\+P\+IN}}~9
+\item 
+\#define \mbox{\hyperlink{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga3ef83d99ed25a619704947e5f77ca03d_ga3ef83d99ed25a619704947e5f77ca03d}{I2\+C\+\_\+\+S\+C\+L\+\_\+\+P\+O\+RT}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga0e4e08bab2fb484136d18b067bef372c_ga0e4e08bab2fb484136d18b067bef372c}{I2\+C\+\_\+\+S\+C\+L\+\_\+\+P\+IN}}~8
+\item 
+\#define \mbox{\hyperlink{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_gaab67b9610994e1990a3b56590a129775_gaab67b9610994e1990a3b56590a129775}{A\+P\+B\+Clock\+Speed\+\_\+\+M\+Hz}}~42
+\item 
+\#define \mbox{\hyperlink{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga7026c87335ace84ae881f34303b29aff_ga7026c87335ace84ae881f34303b29aff}{C\+C\+R\+\_\+\+V\+A\+L\+UE}}~250
+\item 
+\#define \mbox{\hyperlink{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_gab1dc00ef716bb1ba8effeb4bd7a86c44_gab1dc00ef716bb1ba8effeb4bd7a86c44}{T\+R\+I\+S\+E\+\_\+\+V\+A\+L\+UE}}~51
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_gafcf98649d6a541e08f6a531cdd948e7a_gafcf98649d6a541e08f6a531cdd948e7a}{Pressure\+Sensor\+Initialize}} (void)
+\item 
+static void \mbox{\hyperlink{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga3c470c357442c6697f971a72790975e8_ga3c470c357442c6697f971a72790975e8}{enable\+Clock\+To\+Register}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module used for initialization I2\+C1 bus used for communication with a piezoresistive silicon pressure sensor from Honeywell Basic Amplified A\+BP Series. Calibrated output values for pressure are updated at approximately 1 k\+Hz for analog and 2 k\+Hz for digital. According to Honeywell Technical note, Honeywell\textquotesingle{}s digital output pressure sensors are designed to work as slaves and will therefore only respond to requests from a master device. Following the address and read bit from the master, Honeywell digital output pressure sensors are designed to output up to 4 bytes of data, depending on the sensor options and the needs of the application. Sensor used in project gives two data bytes that are the compensated pressure output, along with sensor status bits. 
+
+ For Honeywell digital output pressure sensors, the output of the device can be expressed by the transfer function of the device as shown in following equation\+:  Example calculations below\+:  
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_gaab67b9610994e1990a3b56590a129775_gaab67b9610994e1990a3b56590a129775}\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_gaab67b9610994e1990a3b56590a129775_gaab67b9610994e1990a3b56590a129775}} 
+\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}!APBClockSpeed\_MHz@{APBClockSpeed\_MHz}}
+\index{APBClockSpeed\_MHz@{APBClockSpeed\_MHz}!Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+\subsubsection{\texorpdfstring{APBClockSpeed\_MHz}{APBClockSpeed\_MHz}}
+{\footnotesize\ttfamily \#define A\+P\+B\+Clock\+Speed\+\_\+\+M\+Hz~42}
+
+Set Clock value on A\+P\+B1 B\+US 
+
+Definition at line 36 of file Pressure\+Sensor\+A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3.\+h.
+
+\mbox{\Hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga7026c87335ace84ae881f34303b29aff_ga7026c87335ace84ae881f34303b29aff}\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga7026c87335ace84ae881f34303b29aff_ga7026c87335ace84ae881f34303b29aff}} 
+\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}!CCR\_VALUE@{CCR\_VALUE}}
+\index{CCR\_VALUE@{CCR\_VALUE}!Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+\subsubsection{\texorpdfstring{CCR\_VALUE}{CCR\_VALUE}}
+{\footnotesize\ttfamily \#define C\+C\+R\+\_\+\+V\+A\+L\+UE~250}
+
+Set calculated value of C\+CR\mbox{[}11\+:0\mbox{]} in C\+CR register 
+
+Definition at line 37 of file Pressure\+Sensor\+A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3.\+h.
+
+\mbox{\Hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga0e4e08bab2fb484136d18b067bef372c_ga0e4e08bab2fb484136d18b067bef372c}\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga0e4e08bab2fb484136d18b067bef372c_ga0e4e08bab2fb484136d18b067bef372c}} 
+\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}!I2C\_SCL\_PIN@{I2C\_SCL\_PIN}}
+\index{I2C\_SCL\_PIN@{I2C\_SCL\_PIN}!Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+\subsubsection{\texorpdfstring{I2C\_SCL\_PIN}{I2C\_SCL\_PIN}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+S\+C\+L\+\_\+\+P\+IN~8}
+
+Set G\+P\+IO pin used for I2\+C1 S\+CL line controlling 
+
+Definition at line 34 of file Pressure\+Sensor\+A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3.\+h.
+
+\mbox{\Hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga3ef83d99ed25a619704947e5f77ca03d_ga3ef83d99ed25a619704947e5f77ca03d}\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga3ef83d99ed25a619704947e5f77ca03d_ga3ef83d99ed25a619704947e5f77ca03d}} 
+\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}!I2C\_SCL\_PORT@{I2C\_SCL\_PORT}}
+\index{I2C\_SCL\_PORT@{I2C\_SCL\_PORT}!Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+\subsubsection{\texorpdfstring{I2C\_SCL\_PORT}{I2C\_SCL\_PORT}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+S\+C\+L\+\_\+\+P\+O\+RT~G\+P\+I\+OB}
+
+Set G\+P\+IO port used for I2\+C1 S\+CL line controlling 
+
+Definition at line 33 of file Pressure\+Sensor\+A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3.\+h.
+
+\mbox{\Hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga2cade698267beb86ccaa38c14d35ab0f_ga2cade698267beb86ccaa38c14d35ab0f}\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga2cade698267beb86ccaa38c14d35ab0f_ga2cade698267beb86ccaa38c14d35ab0f}} 
+\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}!I2C\_SDA\_PIN@{I2C\_SDA\_PIN}}
+\index{I2C\_SDA\_PIN@{I2C\_SDA\_PIN}!Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+\subsubsection{\texorpdfstring{I2C\_SDA\_PIN}{I2C\_SDA\_PIN}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+S\+D\+A\+\_\+\+P\+IN~9}
+
+Set G\+P\+IO pin used for I2\+C1 S\+DA line controlling 
+
+Definition at line 31 of file Pressure\+Sensor\+A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3.\+h.
+
+\mbox{\Hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga27ad1f279136628679479a5fedb6a94c_ga27ad1f279136628679479a5fedb6a94c}\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga27ad1f279136628679479a5fedb6a94c_ga27ad1f279136628679479a5fedb6a94c}} 
+\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}!I2C\_SDA\_PORT@{I2C\_SDA\_PORT}}
+\index{I2C\_SDA\_PORT@{I2C\_SDA\_PORT}!Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+\subsubsection{\texorpdfstring{I2C\_SDA\_PORT}{I2C\_SDA\_PORT}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+S\+D\+A\+\_\+\+P\+O\+RT~G\+P\+I\+OB}
+
+Set G\+P\+IO port used for I2\+C1 S\+DA line controlling 
+
+Definition at line 30 of file Pressure\+Sensor\+A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3.\+h.
+
+\mbox{\Hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_gab1dc00ef716bb1ba8effeb4bd7a86c44_gab1dc00ef716bb1ba8effeb4bd7a86c44}\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_gab1dc00ef716bb1ba8effeb4bd7a86c44_gab1dc00ef716bb1ba8effeb4bd7a86c44}} 
+\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}!TRISE\_VALUE@{TRISE\_VALUE}}
+\index{TRISE\_VALUE@{TRISE\_VALUE}!Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+\subsubsection{\texorpdfstring{TRISE\_VALUE}{TRISE\_VALUE}}
+{\footnotesize\ttfamily \#define T\+R\+I\+S\+E\+\_\+\+V\+A\+L\+UE~51}
+
+Set value of T\+R\+I\+SE\mbox{[}5\+:0\mbox{]} in T\+R\+I\+SE register 
+
+Definition at line 38 of file Pressure\+Sensor\+A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga3c470c357442c6697f971a72790975e8_ga3c470c357442c6697f971a72790975e8}\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_ga3c470c357442c6697f971a72790975e8_ga3c470c357442c6697f971a72790975e8}} 
+\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}!enableClockToRegister@{enableClockToRegister}}
+\index{enableClockToRegister@{enableClockToRegister}!Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+\subsubsection{\texorpdfstring{enableClockToRegister()}{enableClockToRegister()}}
+{\footnotesize\ttfamily static void enable\+Clock\+To\+Register (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_gafcf98649d6a541e08f6a531cdd948e7a_gafcf98649d6a541e08f6a531cdd948e7a}\label{group___pressure_sensor_a_b_p_m_a_n_n005_p_g2_a3_gafcf98649d6a541e08f6a531cdd948e7a_gafcf98649d6a541e08f6a531cdd948e7a}} 
+\index{Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}!PressureSensorInitialize@{PressureSensorInitialize}}
+\index{PressureSensorInitialize@{PressureSensorInitialize}!Pressure Sensor ABPMANN005PG2A3@{Pressure Sensor ABPMANN005PG2A3}}
+\subsubsection{\texorpdfstring{PressureSensorInitialize()}{PressureSensorInitialize()}}
+{\footnotesize\ttfamily void Pressure\+Sensor\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file Pressure\+Sensor\+A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3.\+c.
+

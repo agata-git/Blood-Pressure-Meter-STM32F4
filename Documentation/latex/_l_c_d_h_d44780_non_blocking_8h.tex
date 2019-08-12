@@ -1,0 +1,518 @@
+\hypertarget{_l_c_d_h_d44780_non_blocking_8h}{}\section{L\+C\+D\+H\+D44780\+Non\+Blocking.\+h File Reference}
+\label{_l_c_d_h_d44780_non_blocking_8h}\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f446xx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdint.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga144c413a73ea550cef14bb17c31df074_ga144c413a73ea550cef14bb17c31df074}{\+\_\+4\+\_\+bit\+\_\+mode}}
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga15a780019b5c2b4da333f8de1a854eef_ga15a780019b5c2b4da333f8de1a854eef}{backlight\+\_\+controlled\+\_\+by\+\_\+\+S\+T\+M32}}
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga075ad9c307430a82bf41cfaf18c6a3eb_ga075ad9c307430a82bf41cfaf18c6a3eb}{P\+S\+C\+\_\+\+V\+A\+L\+UE}}~2000
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga7a8e8722b361c452c1468e2c195f2685_ga7a8e8722b361c452c1468e2c195f2685}{A\+R\+R\+\_\+\+V\+A\+L\+UE}}~105
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga82c753863ba7e2c615843f8467562796_ga82c753863ba7e2c615843f8467562796}{B\+A\+C\+K\+L\+I\+G\+H\+T\+\_\+\+P\+O\+RT}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gabbc66f91ab4eb10b079c06095fbef994_gabbc66f91ab4eb10b079c06095fbef994}{B\+A\+C\+K\+L\+I\+G\+H\+T\+\_\+\+P\+IN}}~6
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaa248ce15f60160605547ab333489781b_gaa248ce15f60160605547ab333489781b}{R\+S\+\_\+\+P\+O\+RT}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gab36f7bcb538b332ae44f0b2b2375b2de_gab36f7bcb538b332ae44f0b2b2375b2de}{R\+S\+\_\+\+P\+IN}}~9
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga8f5ba7550eaecde4f356a03e006b7308_ga8f5ba7550eaecde4f356a03e006b7308}{E\+\_\+\+P\+O\+RT}}~G\+P\+I\+OC
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaadf79f08aa7bd6622d96ea86e0b5cbfd_gaadf79f08aa7bd6622d96ea86e0b5cbfd}{E\+\_\+\+P\+IN}}~7
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga7b72b21958bd11fd718723b95bc335d2_ga7b72b21958bd11fd718723b95bc335d2}{D4\+\_\+\+P\+O\+RT}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga397c2c535f67a13298ac59cd4a5aba4c_ga397c2c535f67a13298ac59cd4a5aba4c}{D4\+\_\+\+P\+IN}}~5
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaf46533a3dd7bc93c1371f1fa7daab07f_gaf46533a3dd7bc93c1371f1fa7daab07f}{D5\+\_\+\+P\+O\+RT}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga9c3b90946c5e3746cf8b032e34c7d824_ga9c3b90946c5e3746cf8b032e34c7d824}{D5\+\_\+\+P\+IN}}~4
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaf55da3fa3f8bbdb1e0237ba04a8570c9_gaf55da3fa3f8bbdb1e0237ba04a8570c9}{D6\+\_\+\+P\+O\+RT}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga5b6dc21cf46572ec4c1349b26bed67e9_ga5b6dc21cf46572ec4c1349b26bed67e9}{D6\+\_\+\+P\+IN}}~10
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga57ce904a230082472c561269513a9bf6_ga57ce904a230082472c561269513a9bf6}{D7\+\_\+\+P\+O\+RT}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gabb43489f7452bd6cd0e820071f22c74d_gabb43489f7452bd6cd0e820071f22c74d}{D7\+\_\+\+P\+IN}}~8
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gabadb170a13a0a14adb963ef388742618_gabadb170a13a0a14adb963ef388742618}{L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Length}}~128
+\item 
+\#define \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga081577943699e079400d56118ad0c170_ga081577943699e079400d56118ad0c170}{L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Mask}}~(\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gabadb170a13a0a14adb963ef388742618_gabadb170a13a0a14adb963ef388742618}{L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Length}} -\/ 1)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_ga033f2c2ba101d1649bd36de7783782f0}{commands}} \{ \newline
+\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a4990e18095797583a200092df10f8afb}{heart}} = 0x00, 
+\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a842129cd2e6e95dc84ea5fcb90bb97a6}{clear\+\_\+screen}} = 0x01, 
+\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0aea174bdd0f1970f78e8e41e25a5a0704}{\+\_\+4bit\+\_\+mode\+\_\+2lines\+\_\+5x7font}} = 0x28, 
+\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a605c1fe8d779965e3c5b55f25ba788a5}{\+\_\+8bit\+\_\+mode\+\_\+2lines\+\_\+5x7font}} = 0x38, 
+\newline
+\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a240cc19bb5a38b001b816f7d0c1b9b95}{C\+G\+R\+A\+M\+\_\+set}} = 0x40, 
+\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a09ebe9780c552e09677e48cb46967e66}{D\+D\+R\+A\+M\+\_\+set}} = 0x80
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaccb0e33375f99c7ce3eea8e32781c1ba_gaccb0e33375f99c7ce3eea8e32781c1ba}{L\+C\+D\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Function initializes L\+CD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga73568e70866ca81b92b34ce8a65a01e4_ga73568e70866ca81b92b34ce8a65a01e4}{L\+C\+D\+Send\+Command}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Function writes command to L\+CD F\+I\+FO buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gacbe0b84f31cf18df2b70d509e826db3e_gacbe0b84f31cf18df2b70d509e826db3e}{L\+C\+D\+Send\+Data}} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Function writes data to L\+CD F\+I\+FO buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga198c4cf7d792789662bfa896f5066bb6_ga198c4cf7d792789662bfa896f5066bb6}{L\+C\+D\+Send\+Text}} (char $\ast$text)
+\begin{DoxyCompactList}\small\item\em Function writes data to L\+CD F\+I\+FO buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaf43a1b2f3c74fb30ccf5516f8d0953c5_gaf43a1b2f3c74fb30ccf5516f8d0953c5}{L\+C\+D\+Send8bit\+Integer}} (uint8\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Function displays an 8-\/bit integer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga283ac55110a61e344f8a7cbd5b976399_ga283ac55110a61e344f8a7cbd5b976399}{L\+C\+D\+Locate\+XY}} (uint8\+\_\+t x, uint8\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Function sets cursor on selected position. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaa62a47eb454afaa0aee3359692855962_gaa62a47eb454afaa0aee3359692855962}{L\+C\+D\+Send\+Half\+Byte}} (uint8\+\_\+t cmd)
+\item 
+static void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gad4759d75709e2b5bb8d5173a3907a3e6_gad4759d75709e2b5bb8d5173a3907a3e6}{set\+Pin\+As\+Output}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port, uint32\+\_\+t pin)
+\item 
+static void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga3c470c357442c6697f971a72790975e8_ga3c470c357442c6697f971a72790975e8}{enable\+Clock\+To\+Register}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaa62bb09e698238df72fba7a50ff83a03_gaa62bb09e698238df72fba7a50ff83a03}{L\+C\+D\+\_\+\+F\+I\+FO}} \mbox{[}\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gabadb170a13a0a14adb963ef388742618_gabadb170a13a0a14adb963ef388742618}{L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Length}}\mbox{]}
+\item 
+static volatile uint16\+\_\+t \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gab388d874385a511081bc7a267699c48d_gab388d874385a511081bc7a267699c48d}{L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Head}} = 0
+\item 
+static volatile uint16\+\_\+t \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaa1193bb5f4050455e598080e36fcb9d8_gaa1193bb5f4050455e598080e36fcb9d8}{L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Tail}} = 0
+\item 
+static volatile uint16\+\_\+t \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gae140fd1f500bd0a2868190e2057c7e51_gae140fd1f500bd0a2868190e2057c7e51}{L\+C\+D\+\_\+temp\+\_\+\+F\+I\+F\+O\+\_\+\+Head}} = 0
+\item 
+static enum \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_ga033f2c2ba101d1649bd36de7783782f0}{commands}} \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gad6f985b808b613c39920e86b7465cfbf_gad6f985b808b613c39920e86b7465cfbf}{commands}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga144c413a73ea550cef14bb17c31df074_ga144c413a73ea550cef14bb17c31df074}\label{group___l_c_d_h_d44780_non_blocking_ga144c413a73ea550cef14bb17c31df074_ga144c413a73ea550cef14bb17c31df074}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!\_4\_bit\_mode@{\_4\_bit\_mode}}
+\index{\_4\_bit\_mode@{\_4\_bit\_mode}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{\_4\_bit\_mode}{\_4\_bit\_mode}}
+{\footnotesize\ttfamily \#define \+\_\+4\+\_\+bit\+\_\+mode}
+
+Uncomment this macro if 4 bit mode slected 
+
+Definition at line 26 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga7a8e8722b361c452c1468e2c195f2685_ga7a8e8722b361c452c1468e2c195f2685}\label{group___l_c_d_h_d44780_non_blocking_ga7a8e8722b361c452c1468e2c195f2685_ga7a8e8722b361c452c1468e2c195f2685}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!ARR\_VALUE@{ARR\_VALUE}}
+\index{ARR\_VALUE@{ARR\_VALUE}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{ARR\_VALUE}{ARR\_VALUE}}
+{\footnotesize\ttfamily \#define A\+R\+R\+\_\+\+V\+A\+L\+UE~105}
+
+Set value of Timer\textquotesingle{}s auto-\/reload register 
+
+Definition at line 34 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga15a780019b5c2b4da333f8de1a854eef_ga15a780019b5c2b4da333f8de1a854eef}\label{group___l_c_d_h_d44780_non_blocking_ga15a780019b5c2b4da333f8de1a854eef_ga15a780019b5c2b4da333f8de1a854eef}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!backlight\_controlled\_by\_STM32@{backlight\_controlled\_by\_STM32}}
+\index{backlight\_controlled\_by\_STM32@{backlight\_controlled\_by\_STM32}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{backlight\_controlled\_by\_STM32}{backlight\_controlled\_by\_STM32}}
+{\footnotesize\ttfamily \#define backlight\+\_\+controlled\+\_\+by\+\_\+\+S\+T\+M32}
+
+Uncomment this macro if L\+CD backligh is controlled by microcontroller pin 
+
+Definition at line 28 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gabbc66f91ab4eb10b079c06095fbef994_gabbc66f91ab4eb10b079c06095fbef994}\label{group___l_c_d_h_d44780_non_blocking_gabbc66f91ab4eb10b079c06095fbef994_gabbc66f91ab4eb10b079c06095fbef994}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!BACKLIGHT\_PIN@{BACKLIGHT\_PIN}}
+\index{BACKLIGHT\_PIN@{BACKLIGHT\_PIN}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{BACKLIGHT\_PIN}{BACKLIGHT\_PIN}}
+{\footnotesize\ttfamily \#define B\+A\+C\+K\+L\+I\+G\+H\+T\+\_\+\+P\+IN~6}
+
+Set G\+P\+IO pin used for backlight controlling 
+
+Definition at line 41 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga82c753863ba7e2c615843f8467562796_ga82c753863ba7e2c615843f8467562796}\label{group___l_c_d_h_d44780_non_blocking_ga82c753863ba7e2c615843f8467562796_ga82c753863ba7e2c615843f8467562796}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!BACKLIGHT\_PORT@{BACKLIGHT\_PORT}}
+\index{BACKLIGHT\_PORT@{BACKLIGHT\_PORT}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{BACKLIGHT\_PORT}{BACKLIGHT\_PORT}}
+{\footnotesize\ttfamily \#define B\+A\+C\+K\+L\+I\+G\+H\+T\+\_\+\+P\+O\+RT~G\+P\+I\+OB}
+
+Set G\+P\+IO port used for backlight controlling 
+
+Definition at line 40 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga397c2c535f67a13298ac59cd4a5aba4c_ga397c2c535f67a13298ac59cd4a5aba4c}\label{group___l_c_d_h_d44780_non_blocking_ga397c2c535f67a13298ac59cd4a5aba4c_ga397c2c535f67a13298ac59cd4a5aba4c}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!D4\_PIN@{D4\_PIN}}
+\index{D4\_PIN@{D4\_PIN}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{D4\_PIN}{D4\_PIN}}
+{\footnotesize\ttfamily \#define D4\+\_\+\+P\+IN~5}
+
+Set G\+P\+IO pin used for Data4 line controlling 
+
+Definition at line 51 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga7b72b21958bd11fd718723b95bc335d2_ga7b72b21958bd11fd718723b95bc335d2}\label{group___l_c_d_h_d44780_non_blocking_ga7b72b21958bd11fd718723b95bc335d2_ga7b72b21958bd11fd718723b95bc335d2}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!D4\_PORT@{D4\_PORT}}
+\index{D4\_PORT@{D4\_PORT}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{D4\_PORT}{D4\_PORT}}
+{\footnotesize\ttfamily \#define D4\+\_\+\+P\+O\+RT~G\+P\+I\+OB}
+
+Set G\+P\+IO port used for Data4 line controlling 
+
+Definition at line 50 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga9c3b90946c5e3746cf8b032e34c7d824_ga9c3b90946c5e3746cf8b032e34c7d824}\label{group___l_c_d_h_d44780_non_blocking_ga9c3b90946c5e3746cf8b032e34c7d824_ga9c3b90946c5e3746cf8b032e34c7d824}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!D5\_PIN@{D5\_PIN}}
+\index{D5\_PIN@{D5\_PIN}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{D5\_PIN}{D5\_PIN}}
+{\footnotesize\ttfamily \#define D5\+\_\+\+P\+IN~4}
+
+Set G\+P\+IO pin used for Data5 line controlling 
+
+Definition at line 54 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaf46533a3dd7bc93c1371f1fa7daab07f_gaf46533a3dd7bc93c1371f1fa7daab07f}\label{group___l_c_d_h_d44780_non_blocking_gaf46533a3dd7bc93c1371f1fa7daab07f_gaf46533a3dd7bc93c1371f1fa7daab07f}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!D5\_PORT@{D5\_PORT}}
+\index{D5\_PORT@{D5\_PORT}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{D5\_PORT}{D5\_PORT}}
+{\footnotesize\ttfamily \#define D5\+\_\+\+P\+O\+RT~G\+P\+I\+OB}
+
+Set G\+P\+IO port used for Data5 line controlling 
+
+Definition at line 53 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga5b6dc21cf46572ec4c1349b26bed67e9_ga5b6dc21cf46572ec4c1349b26bed67e9}\label{group___l_c_d_h_d44780_non_blocking_ga5b6dc21cf46572ec4c1349b26bed67e9_ga5b6dc21cf46572ec4c1349b26bed67e9}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!D6\_PIN@{D6\_PIN}}
+\index{D6\_PIN@{D6\_PIN}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{D6\_PIN}{D6\_PIN}}
+{\footnotesize\ttfamily \#define D6\+\_\+\+P\+IN~10}
+
+Set G\+P\+IO pin used for Data6 line controlling 
+
+Definition at line 57 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaf55da3fa3f8bbdb1e0237ba04a8570c9_gaf55da3fa3f8bbdb1e0237ba04a8570c9}\label{group___l_c_d_h_d44780_non_blocking_gaf55da3fa3f8bbdb1e0237ba04a8570c9_gaf55da3fa3f8bbdb1e0237ba04a8570c9}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!D6\_PORT@{D6\_PORT}}
+\index{D6\_PORT@{D6\_PORT}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{D6\_PORT}{D6\_PORT}}
+{\footnotesize\ttfamily \#define D6\+\_\+\+P\+O\+RT~G\+P\+I\+OB}
+
+Set G\+P\+IO port used for Data6 line controlling 
+
+Definition at line 56 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gabb43489f7452bd6cd0e820071f22c74d_gabb43489f7452bd6cd0e820071f22c74d}\label{group___l_c_d_h_d44780_non_blocking_gabb43489f7452bd6cd0e820071f22c74d_gabb43489f7452bd6cd0e820071f22c74d}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!D7\_PIN@{D7\_PIN}}
+\index{D7\_PIN@{D7\_PIN}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{D7\_PIN}{D7\_PIN}}
+{\footnotesize\ttfamily \#define D7\+\_\+\+P\+IN~8}
+
+Set G\+P\+IO pin used for Data7 line controlling 
+
+Definition at line 60 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga57ce904a230082472c561269513a9bf6_ga57ce904a230082472c561269513a9bf6}\label{group___l_c_d_h_d44780_non_blocking_ga57ce904a230082472c561269513a9bf6_ga57ce904a230082472c561269513a9bf6}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!D7\_PORT@{D7\_PORT}}
+\index{D7\_PORT@{D7\_PORT}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{D7\_PORT}{D7\_PORT}}
+{\footnotesize\ttfamily \#define D7\+\_\+\+P\+O\+RT~G\+P\+I\+OA}
+
+Set G\+P\+IO port used for Data7 line controlling 
+
+Definition at line 59 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaadf79f08aa7bd6622d96ea86e0b5cbfd_gaadf79f08aa7bd6622d96ea86e0b5cbfd}\label{group___l_c_d_h_d44780_non_blocking_gaadf79f08aa7bd6622d96ea86e0b5cbfd_gaadf79f08aa7bd6622d96ea86e0b5cbfd}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!E\_PIN@{E\_PIN}}
+\index{E\_PIN@{E\_PIN}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{E\_PIN}{E\_PIN}}
+{\footnotesize\ttfamily \#define E\+\_\+\+P\+IN~7}
+
+Set G\+P\+IO pin used for Enable line controlling 
+
+Definition at line 48 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga8f5ba7550eaecde4f356a03e006b7308_ga8f5ba7550eaecde4f356a03e006b7308}\label{group___l_c_d_h_d44780_non_blocking_ga8f5ba7550eaecde4f356a03e006b7308_ga8f5ba7550eaecde4f356a03e006b7308}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!E\_PORT@{E\_PORT}}
+\index{E\_PORT@{E\_PORT}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{E\_PORT}{E\_PORT}}
+{\footnotesize\ttfamily \#define E\+\_\+\+P\+O\+RT~G\+P\+I\+OC}
+
+Set G\+P\+IO port used for Enable line controlling 
+
+Definition at line 47 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gabadb170a13a0a14adb963ef388742618_gabadb170a13a0a14adb963ef388742618}\label{group___l_c_d_h_d44780_non_blocking_gabadb170a13a0a14adb963ef388742618_gabadb170a13a0a14adb963ef388742618}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCD\_FIFO\_Length@{LCD\_FIFO\_Length}}
+\index{LCD\_FIFO\_Length@{LCD\_FIFO\_Length}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCD\_FIFO\_Length}{LCD\_FIFO\_Length}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Length~128}
+
+Set F\+I\+FO length which can be only a power of 2 
+
+Definition at line 78 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga081577943699e079400d56118ad0c170_ga081577943699e079400d56118ad0c170}\label{group___l_c_d_h_d44780_non_blocking_ga081577943699e079400d56118ad0c170_ga081577943699e079400d56118ad0c170}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCD\_FIFO\_Mask@{LCD\_FIFO\_Mask}}
+\index{LCD\_FIFO\_Mask@{LCD\_FIFO\_Mask}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCD\_FIFO\_Mask}{LCD\_FIFO\_Mask}}
+{\footnotesize\ttfamily \#define L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Mask~(\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gabadb170a13a0a14adb963ef388742618_gabadb170a13a0a14adb963ef388742618}{L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Length}} -\/ 1)}
+
+
+
+Definition at line 84 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga075ad9c307430a82bf41cfaf18c6a3eb_ga075ad9c307430a82bf41cfaf18c6a3eb}\label{group___l_c_d_h_d44780_non_blocking_ga075ad9c307430a82bf41cfaf18c6a3eb_ga075ad9c307430a82bf41cfaf18c6a3eb}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!PSC\_VALUE@{PSC\_VALUE}}
+\index{PSC\_VALUE@{PSC\_VALUE}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{PSC\_VALUE}{PSC\_VALUE}}
+{\footnotesize\ttfamily \#define P\+S\+C\+\_\+\+V\+A\+L\+UE~2000}
+
+Set value of Timer\textquotesingle{}s Prescaler register 
+
+Definition at line 33 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gab36f7bcb538b332ae44f0b2b2375b2de_gab36f7bcb538b332ae44f0b2b2375b2de}\label{group___l_c_d_h_d44780_non_blocking_gab36f7bcb538b332ae44f0b2b2375b2de_gab36f7bcb538b332ae44f0b2b2375b2de}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!RS\_PIN@{RS\_PIN}}
+\index{RS\_PIN@{RS\_PIN}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{RS\_PIN}{RS\_PIN}}
+{\footnotesize\ttfamily \#define R\+S\+\_\+\+P\+IN~9}
+
+Set G\+P\+IO pin used for Register Select line controlling 
+
+Definition at line 45 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaa248ce15f60160605547ab333489781b_gaa248ce15f60160605547ab333489781b}\label{group___l_c_d_h_d44780_non_blocking_gaa248ce15f60160605547ab333489781b_gaa248ce15f60160605547ab333489781b}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!RS\_PORT@{RS\_PORT}}
+\index{RS\_PORT@{RS\_PORT}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{RS\_PORT}{RS\_PORT}}
+{\footnotesize\ttfamily \#define R\+S\+\_\+\+P\+O\+RT~G\+P\+I\+OA}
+
+Set G\+P\+IO port used for Register Select line controlling 
+
+Definition at line 44 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_ga033f2c2ba101d1649bd36de7783782f0}\label{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_ga033f2c2ba101d1649bd36de7783782f0}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!commands@{commands}}
+\index{commands@{commands}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{commands}{commands}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_ga033f2c2ba101d1649bd36de7783782f0}{commands}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{heart@{heart}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!heart@{heart}}}\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a4990e18095797583a200092df10f8afb}\label{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a4990e18095797583a200092df10f8afb}} 
+heart&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{clear\_screen@{clear\_screen}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!clear\_screen@{clear\_screen}}}\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a842129cd2e6e95dc84ea5fcb90bb97a6}\label{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a842129cd2e6e95dc84ea5fcb90bb97a6}} 
+clear\+\_\+screen&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_4bit\_mode\_2lines\_5x7font@{\_4bit\_mode\_2lines\_5x7font}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!\_4bit\_mode\_2lines\_5x7font@{\_4bit\_mode\_2lines\_5x7font}}}\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0aea174bdd0f1970f78e8e41e25a5a0704}\label{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0aea174bdd0f1970f78e8e41e25a5a0704}} 
+\+\_\+4bit\+\_\+mode\+\_\+2lines\+\_\+5x7font&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_8bit\_mode\_2lines\_5x7font@{\_8bit\_mode\_2lines\_5x7font}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!\_8bit\_mode\_2lines\_5x7font@{\_8bit\_mode\_2lines\_5x7font}}}\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a605c1fe8d779965e3c5b55f25ba788a5}\label{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a605c1fe8d779965e3c5b55f25ba788a5}} 
+\+\_\+8bit\+\_\+mode\+\_\+2lines\+\_\+5x7font&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CGRAM\_set@{CGRAM\_set}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!CGRAM\_set@{CGRAM\_set}}}\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a240cc19bb5a38b001b816f7d0c1b9b95}\label{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a240cc19bb5a38b001b816f7d0c1b9b95}} 
+C\+G\+R\+A\+M\+\_\+set&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DDRAM\_set@{DDRAM\_set}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!DDRAM\_set@{DDRAM\_set}}}\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a09ebe9780c552e09677e48cb46967e66}\label{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_gga033f2c2ba101d1649bd36de7783782f0a09ebe9780c552e09677e48cb46967e66}} 
+D\+D\+R\+A\+M\+\_\+set&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 90 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga3c470c357442c6697f971a72790975e8_ga3c470c357442c6697f971a72790975e8}\label{group___l_c_d_h_d44780_non_blocking_ga3c470c357442c6697f971a72790975e8_ga3c470c357442c6697f971a72790975e8}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!enableClockToRegister@{enableClockToRegister}}
+\index{enableClockToRegister@{enableClockToRegister}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{enableClockToRegister()}{enableClockToRegister()}}
+{\footnotesize\ttfamily static void enable\+Clock\+To\+Register (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaccb0e33375f99c7ce3eea8e32781c1ba_gaccb0e33375f99c7ce3eea8e32781c1ba}\label{group___l_c_d_h_d44780_non_blocking_gaccb0e33375f99c7ce3eea8e32781c1ba_gaccb0e33375f99c7ce3eea8e32781c1ba}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCDInitialize@{LCDInitialize}}
+\index{LCDInitialize@{LCDInitialize}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCDInitialize()}{LCDInitialize()}}
+{\footnotesize\ttfamily void L\+C\+D\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function initializes L\+CD. 
+
+
+
+Definition at line 93 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga283ac55110a61e344f8a7cbd5b976399_ga283ac55110a61e344f8a7cbd5b976399}\label{group___l_c_d_h_d44780_non_blocking_ga283ac55110a61e344f8a7cbd5b976399_ga283ac55110a61e344f8a7cbd5b976399}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCDLocateXY@{LCDLocateXY}}
+\index{LCDLocateXY@{LCDLocateXY}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCDLocateXY()}{LCDLocateXY()}}
+{\footnotesize\ttfamily void L\+C\+D\+Locate\+XY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Function sets cursor on selected position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & Horizontal coordinate of L\+CD display \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Vertical coordinate of L\+CD display \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 282 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaf43a1b2f3c74fb30ccf5516f8d0953c5_gaf43a1b2f3c74fb30ccf5516f8d0953c5}\label{group___l_c_d_h_d44780_non_blocking_gaf43a1b2f3c74fb30ccf5516f8d0953c5_gaf43a1b2f3c74fb30ccf5516f8d0953c5}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCDSend8bitInteger@{LCDSend8bitInteger}}
+\index{LCDSend8bitInteger@{LCDSend8bitInteger}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCDSend8bitInteger()}{LCDSend8bitInteger()}}
+{\footnotesize\ttfamily void L\+C\+D\+Send8bit\+Integer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{number }\end{DoxyParamCaption})}
+
+
+
+Function displays an 8-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em number} & Number in range 0 -\/ 255 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 266 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga73568e70866ca81b92b34ce8a65a01e4_ga73568e70866ca81b92b34ce8a65a01e4}\label{group___l_c_d_h_d44780_non_blocking_ga73568e70866ca81b92b34ce8a65a01e4_ga73568e70866ca81b92b34ce8a65a01e4}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCDSendCommand@{LCDSendCommand}}
+\index{LCDSendCommand@{LCDSendCommand}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCDSendCommand()}{LCDSendCommand()}}
+{\footnotesize\ttfamily void L\+C\+D\+Send\+Command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Function writes command to L\+CD F\+I\+FO buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & L\+CD command \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gacbe0b84f31cf18df2b70d509e826db3e_gacbe0b84f31cf18df2b70d509e826db3e}\label{group___l_c_d_h_d44780_non_blocking_gacbe0b84f31cf18df2b70d509e826db3e_gacbe0b84f31cf18df2b70d509e826db3e}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCDSendData@{LCDSendData}}
+\index{LCDSendData@{LCDSendData}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCDSendData()}{LCDSendData()}}
+{\footnotesize\ttfamily void L\+C\+D\+Send\+Data (\begin{DoxyParamCaption}\item[{unsigned char}]{data }\end{DoxyParamCaption})}
+
+
+
+Function writes data to L\+CD F\+I\+FO buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & L\+CD data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaa62a47eb454afaa0aee3359692855962_gaa62a47eb454afaa0aee3359692855962}\label{group___l_c_d_h_d44780_non_blocking_gaa62a47eb454afaa0aee3359692855962_gaa62a47eb454afaa0aee3359692855962}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCDSendHalfByte@{LCDSendHalfByte}}
+\index{LCDSendHalfByte@{LCDSendHalfByte}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCDSendHalfByte()}{LCDSendHalfByte()}}
+{\footnotesize\ttfamily static void L\+C\+D\+Send\+Half\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga198c4cf7d792789662bfa896f5066bb6_ga198c4cf7d792789662bfa896f5066bb6}\label{group___l_c_d_h_d44780_non_blocking_ga198c4cf7d792789662bfa896f5066bb6_ga198c4cf7d792789662bfa896f5066bb6}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCDSendText@{LCDSendText}}
+\index{LCDSendText@{LCDSendText}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCDSendText()}{LCDSendText()}}
+{\footnotesize\ttfamily void L\+C\+D\+Send\+Text (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+
+
+
+Function writes data to L\+CD F\+I\+FO buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & String message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 226 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gad4759d75709e2b5bb8d5173a3907a3e6_gad4759d75709e2b5bb8d5173a3907a3e6}\label{group___l_c_d_h_d44780_non_blocking_gad4759d75709e2b5bb8d5173a3907a3e6_gad4759d75709e2b5bb8d5173a3907a3e6}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!setPinAsOutput@{setPinAsOutput}}
+\index{setPinAsOutput@{setPinAsOutput}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{setPinAsOutput()}{setPinAsOutput()}}
+{\footnotesize\ttfamily static void set\+Pin\+As\+Output (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port,  }\item[{uint32\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gad6f985b808b613c39920e86b7465cfbf_gad6f985b808b613c39920e86b7465cfbf}\label{group___l_c_d_h_d44780_non_blocking_gad6f985b808b613c39920e86b7465cfbf_gad6f985b808b613c39920e86b7465cfbf}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!commands@{commands}}
+\index{commands@{commands}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{commands}{commands}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_ga033f2c2ba101d1649bd36de7783782f0}{commands}}  \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga033f2c2ba101d1649bd36de7783782f0_ga033f2c2ba101d1649bd36de7783782f0}{commands}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaa62bb09e698238df72fba7a50ff83a03_gaa62bb09e698238df72fba7a50ff83a03}\label{group___l_c_d_h_d44780_non_blocking_gaa62bb09e698238df72fba7a50ff83a03_gaa62bb09e698238df72fba7a50ff83a03}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCD\_FIFO@{LCD\_FIFO}}
+\index{LCD\_FIFO@{LCD\_FIFO}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCD\_FIFO}{LCD\_FIFO}}
+{\footnotesize\ttfamily uint16\+\_\+t L\+C\+D\+\_\+\+F\+I\+FO\mbox{[}\mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gabadb170a13a0a14adb963ef388742618_gabadb170a13a0a14adb963ef388742618}{L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Length}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 85 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gab388d874385a511081bc7a267699c48d_gab388d874385a511081bc7a267699c48d}\label{group___l_c_d_h_d44780_non_blocking_gab388d874385a511081bc7a267699c48d_gab388d874385a511081bc7a267699c48d}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCD\_FIFO\_Head@{LCD\_FIFO\_Head}}
+\index{LCD\_FIFO\_Head@{LCD\_FIFO\_Head}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCD\_FIFO\_Head}{LCD\_FIFO\_Head}}
+{\footnotesize\ttfamily volatile uint16\+\_\+t L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Head = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 86 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaa1193bb5f4050455e598080e36fcb9d8_gaa1193bb5f4050455e598080e36fcb9d8}\label{group___l_c_d_h_d44780_non_blocking_gaa1193bb5f4050455e598080e36fcb9d8_gaa1193bb5f4050455e598080e36fcb9d8}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCD\_FIFO\_Tail@{LCD\_FIFO\_Tail}}
+\index{LCD\_FIFO\_Tail@{LCD\_FIFO\_Tail}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCD\_FIFO\_Tail}{LCD\_FIFO\_Tail}}
+{\footnotesize\ttfamily volatile uint16\+\_\+t L\+C\+D\+\_\+\+F\+I\+F\+O\+\_\+\+Tail = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 87 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gae140fd1f500bd0a2868190e2057c7e51_gae140fd1f500bd0a2868190e2057c7e51}\label{group___l_c_d_h_d44780_non_blocking_gae140fd1f500bd0a2868190e2057c7e51_gae140fd1f500bd0a2868190e2057c7e51}} 
+\index{LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}!LCD\_temp\_FIFO\_Head@{LCD\_temp\_FIFO\_Head}}
+\index{LCD\_temp\_FIFO\_Head@{LCD\_temp\_FIFO\_Head}!LCDHD44780NonBlocking.h@{LCDHD44780NonBlocking.h}}
+\subsubsection{\texorpdfstring{LCD\_temp\_FIFO\_Head}{LCD\_temp\_FIFO\_Head}}
+{\footnotesize\ttfamily volatile uint16\+\_\+t L\+C\+D\+\_\+temp\+\_\+\+F\+I\+F\+O\+\_\+\+Head = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 88 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+h.
+

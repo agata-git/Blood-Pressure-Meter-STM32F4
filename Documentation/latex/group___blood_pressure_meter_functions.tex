@@ -1,0 +1,269 @@
+\hypertarget{group___blood_pressure_meter_functions}{}\section{Blood Pressure Meter Functions}
+\label{group___blood_pressure_meter_functions}\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+
+
+Module containing various functions used in Blood Pressure Meter project.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpulse_wave__}{pulse\+Wave\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Struct contains pressure parameters of blood pulse wave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___blood_pressure_meter_functions_ga4ccd67103f1fbc1580ba09d37bf2d410_ga4ccd67103f1fbc1580ba09d37bf2d410}{P\+U\+M\+P\+\_\+\+P\+O\+RT}}~G\+P\+I\+OC
+\item 
+\#define \mbox{\hyperlink{group___blood_pressure_meter_functions_ga02a786fd2e2f38748aa579ebd58ee8c0_ga02a786fd2e2f38748aa579ebd58ee8c0}{P\+U\+M\+P\+\_\+\+P\+IN}}~1
+\item 
+\#define \mbox{\hyperlink{group___blood_pressure_meter_functions_gac0c3383cb912e60b85763268204aa8d5_gac0c3383cb912e60b85763268204aa8d5}{V\+A\+L\+V\+E\+\_\+\+P\+O\+RT}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{group___blood_pressure_meter_functions_ga9d9daf9f542b99a53806e892a9a66518_ga9d9daf9f542b99a53806e892a9a66518}{V\+A\+L\+V\+E\+\_\+\+P\+IN}}~0
+\item 
+\#define \mbox{\hyperlink{group___blood_pressure_meter_functions_gac8ba909fc8614df64040d2e12c0780e4_gac8ba909fc8614df64040d2e12c0780e4}{B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{group___blood_pressure_meter_functions_gabc2ad14f0789907024ac765711ffd3da_gabc2ad14f0789907024ac765711ffd3da}{B\+U\+T\+T\+O\+N\+\_\+\+P\+IN}}~0
+\item 
+\#define \mbox{\hyperlink{group___blood_pressure_meter_functions_ga130d4bf1fba7d0a968df4eca98224c1e_ga130d4bf1fba7d0a968df4eca98224c1e}{pressure\+Array\+Mask}}~31                 /$\ast$$\ast$ Bit mask used with \mbox{\hyperlink{group___blood_pressure_meter_functions_ga074212e81e34d1ed11bfa7238aaa15d0_ga074212e81e34d1ed11bfa7238aaa15d0}{pressure\+Array}} buffer $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___blood_pressure_meter_functions_ga3a2706feaeba456e1fc2bb14be91fd22_ga3a2706feaeba456e1fc2bb14be91fd22}{R\+C\+C\+Clock\+Configuration}} (void)
+\begin{DoxyCompactList}\small\item\em Function for setting core clock, A\+H\+B1, A\+P\+B1 clock on 42M\+Hz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___blood_pressure_meter_functions_ga24734fd14f8f6338455dc6876c088dd1_ga24734fd14f8f6338455dc6876c088dd1}{Pump\+Valve\+Button\+Configuration}} (void)
+\begin{DoxyCompactList}\small\item\em Function used for pump, valve and button pins initialization. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___blood_pressure_meter_functions_ga3c470c357442c6697f971a72790975e8_ga3c470c357442c6697f971a72790975e8}{enable\+Clock\+To\+Register}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port)
+\item 
+static void \mbox{\hyperlink{group___blood_pressure_meter_functions_gad4759d75709e2b5bb8d5173a3907a3e6_gad4759d75709e2b5bb8d5173a3907a3e6}{set\+Pin\+As\+Output}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port, uint32\+\_\+t pin)
+\item 
+static void \mbox{\hyperlink{group___blood_pressure_meter_functions_gab108244597f329a2bc329694c6fa08e4_gab108244597f329a2bc329694c6fa08e4}{set\+Pin\+As\+Input}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port, uint32\+\_\+t pin)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{group___blood_pressure_meter_functions_ga1e92871ee98293f1d075406d7192be32_ga1e92871ee98293f1d075406d7192be32}{I\+I\+Rforward\+Coeff\+Lowpass\+\_\+20\+Hz}} \mbox{[}5\mbox{]}
+\item 
+float \mbox{\hyperlink{group___blood_pressure_meter_functions_gaddb6d7546a8db3fa284d91704a0b65db_gaddb6d7546a8db3fa284d91704a0b65db}{I\+I\+Rreverse\+Coeff\+Lowpass\+\_\+20\+Hz}} \mbox{[}5\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group___blood_pressure_meter_functions_ga074212e81e34d1ed11bfa7238aaa15d0_ga074212e81e34d1ed11bfa7238aaa15d0}{pressure\+Array}} \mbox{[}32\mbox{]}
+\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___blood_pressure_meter_functions_ga6d2134561d1dccfb4152d385d48c7242_ga6d2134561d1dccfb4152d385d48c7242}{pressure\+Array\+Head}}
+\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___blood_pressure_meter_functions_ga9c328ec15068b921509854dfaa0adaea_ga9c328ec15068b921509854dfaa0adaea}{pressure\+Array\+Tail}}
+\item 
+float \mbox{\hyperlink{group___blood_pressure_meter_functions_ga0d23611e28c2af8552ef0fdf90acb469_ga0d23611e28c2af8552ef0fdf90acb469}{Last128\+Samples\+Buffer}} \mbox{[}128\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group___blood_pressure_meter_functions_gaac39a92229e25e30da63f20928f6c46b_gaac39a92229e25e30da63f20928f6c46b}{Last128\+Samples\+Buffer\+Head}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module containing various functions used in Blood Pressure Meter project. 
+
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_gabc2ad14f0789907024ac765711ffd3da_gabc2ad14f0789907024ac765711ffd3da}\label{group___blood_pressure_meter_functions_gabc2ad14f0789907024ac765711ffd3da_gabc2ad14f0789907024ac765711ffd3da}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!BUTTON\_PIN@{BUTTON\_PIN}}
+\index{BUTTON\_PIN@{BUTTON\_PIN}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{BUTTON\_PIN}{BUTTON\_PIN}}
+{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+\+P\+IN~0}
+
+Set G\+P\+IO pin used for Button controlling 
+
+Definition at line 24 of file Blood\+Pressure\+Meter\+Functions.\+h.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_gac8ba909fc8614df64040d2e12c0780e4_gac8ba909fc8614df64040d2e12c0780e4}\label{group___blood_pressure_meter_functions_gac8ba909fc8614df64040d2e12c0780e4_gac8ba909fc8614df64040d2e12c0780e4}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!BUTTON\_PORT@{BUTTON\_PORT}}
+\index{BUTTON\_PORT@{BUTTON\_PORT}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{BUTTON\_PORT}{BUTTON\_PORT}}
+{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT~G\+P\+I\+OA}
+
+Set G\+P\+IO port used for Button controlling 
+
+Definition at line 23 of file Blood\+Pressure\+Meter\+Functions.\+h.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga130d4bf1fba7d0a968df4eca98224c1e_ga130d4bf1fba7d0a968df4eca98224c1e}\label{group___blood_pressure_meter_functions_ga130d4bf1fba7d0a968df4eca98224c1e_ga130d4bf1fba7d0a968df4eca98224c1e}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!pressureArrayMask@{pressureArrayMask}}
+\index{pressureArrayMask@{pressureArrayMask}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{pressureArrayMask}{pressureArrayMask}}
+{\footnotesize\ttfamily \#define pressure\+Array\+Mask~31                 /$\ast$$\ast$ Bit mask used with \mbox{\hyperlink{group___blood_pressure_meter_functions_ga074212e81e34d1ed11bfa7238aaa15d0_ga074212e81e34d1ed11bfa7238aaa15d0}{pressure\+Array}} buffer $\ast$/}
+
+
+
+Definition at line 36 of file Blood\+Pressure\+Meter\+Functions.\+h.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga02a786fd2e2f38748aa579ebd58ee8c0_ga02a786fd2e2f38748aa579ebd58ee8c0}\label{group___blood_pressure_meter_functions_ga02a786fd2e2f38748aa579ebd58ee8c0_ga02a786fd2e2f38748aa579ebd58ee8c0}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!PUMP\_PIN@{PUMP\_PIN}}
+\index{PUMP\_PIN@{PUMP\_PIN}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{PUMP\_PIN}{PUMP\_PIN}}
+{\footnotesize\ttfamily \#define P\+U\+M\+P\+\_\+\+P\+IN~1}
+
+Set G\+P\+IO pin used for Pump controlling 
+
+Definition at line 20 of file Blood\+Pressure\+Meter\+Functions.\+h.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga4ccd67103f1fbc1580ba09d37bf2d410_ga4ccd67103f1fbc1580ba09d37bf2d410}\label{group___blood_pressure_meter_functions_ga4ccd67103f1fbc1580ba09d37bf2d410_ga4ccd67103f1fbc1580ba09d37bf2d410}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!PUMP\_PORT@{PUMP\_PORT}}
+\index{PUMP\_PORT@{PUMP\_PORT}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{PUMP\_PORT}{PUMP\_PORT}}
+{\footnotesize\ttfamily \#define P\+U\+M\+P\+\_\+\+P\+O\+RT~G\+P\+I\+OC}
+
+Set G\+P\+IO port used for Pump controlling 
+
+Definition at line 19 of file Blood\+Pressure\+Meter\+Functions.\+h.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga9d9daf9f542b99a53806e892a9a66518_ga9d9daf9f542b99a53806e892a9a66518}\label{group___blood_pressure_meter_functions_ga9d9daf9f542b99a53806e892a9a66518_ga9d9daf9f542b99a53806e892a9a66518}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!VALVE\_PIN@{VALVE\_PIN}}
+\index{VALVE\_PIN@{VALVE\_PIN}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{VALVE\_PIN}{VALVE\_PIN}}
+{\footnotesize\ttfamily \#define V\+A\+L\+V\+E\+\_\+\+P\+IN~0}
+
+Set G\+P\+IO pin used for Valve controlling 
+
+Definition at line 22 of file Blood\+Pressure\+Meter\+Functions.\+h.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_gac0c3383cb912e60b85763268204aa8d5_gac0c3383cb912e60b85763268204aa8d5}\label{group___blood_pressure_meter_functions_gac0c3383cb912e60b85763268204aa8d5_gac0c3383cb912e60b85763268204aa8d5}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!VALVE\_PORT@{VALVE\_PORT}}
+\index{VALVE\_PORT@{VALVE\_PORT}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{VALVE\_PORT}{VALVE\_PORT}}
+{\footnotesize\ttfamily \#define V\+A\+L\+V\+E\+\_\+\+P\+O\+RT~G\+P\+I\+OB}
+
+Set G\+P\+IO port used for Valve controlling 
+
+Definition at line 21 of file Blood\+Pressure\+Meter\+Functions.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga3c470c357442c6697f971a72790975e8_ga3c470c357442c6697f971a72790975e8}\label{group___blood_pressure_meter_functions_ga3c470c357442c6697f971a72790975e8_ga3c470c357442c6697f971a72790975e8}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!enableClockToRegister@{enableClockToRegister}}
+\index{enableClockToRegister@{enableClockToRegister}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{enableClockToRegister()}{enableClockToRegister()}}
+{\footnotesize\ttfamily static void enable\+Clock\+To\+Register (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga24734fd14f8f6338455dc6876c088dd1_ga24734fd14f8f6338455dc6876c088dd1}\label{group___blood_pressure_meter_functions_ga24734fd14f8f6338455dc6876c088dd1_ga24734fd14f8f6338455dc6876c088dd1}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!PumpValveButtonConfiguration@{PumpValveButtonConfiguration}}
+\index{PumpValveButtonConfiguration@{PumpValveButtonConfiguration}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{PumpValveButtonConfiguration()}{PumpValveButtonConfiguration()}}
+{\footnotesize\ttfamily void Pump\+Valve\+Button\+Configuration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function used for pump, valve and button pins initialization. 
+
+
+
+Definition at line 60 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga3a2706feaeba456e1fc2bb14be91fd22_ga3a2706feaeba456e1fc2bb14be91fd22}\label{group___blood_pressure_meter_functions_ga3a2706feaeba456e1fc2bb14be91fd22_ga3a2706feaeba456e1fc2bb14be91fd22}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!RCCClockConfiguration@{RCCClockConfiguration}}
+\index{RCCClockConfiguration@{RCCClockConfiguration}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{RCCClockConfiguration()}{RCCClockConfiguration()}}
+{\footnotesize\ttfamily void R\+C\+C\+Clock\+Configuration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function for setting core clock, A\+H\+B1, A\+P\+B1 clock on 42M\+Hz. 
+
+
+
+Definition at line 16 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_gab108244597f329a2bc329694c6fa08e4_gab108244597f329a2bc329694c6fa08e4}\label{group___blood_pressure_meter_functions_gab108244597f329a2bc329694c6fa08e4_gab108244597f329a2bc329694c6fa08e4}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!setPinAsInput@{setPinAsInput}}
+\index{setPinAsInput@{setPinAsInput}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{setPinAsInput()}{setPinAsInput()}}
+{\footnotesize\ttfamily static void set\+Pin\+As\+Input (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port,  }\item[{uint32\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_gad4759d75709e2b5bb8d5173a3907a3e6_gad4759d75709e2b5bb8d5173a3907a3e6}\label{group___blood_pressure_meter_functions_gad4759d75709e2b5bb8d5173a3907a3e6_gad4759d75709e2b5bb8d5173a3907a3e6}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!setPinAsOutput@{setPinAsOutput}}
+\index{setPinAsOutput@{setPinAsOutput}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{setPinAsOutput()}{setPinAsOutput()}}
+{\footnotesize\ttfamily static void set\+Pin\+As\+Output (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port,  }\item[{uint32\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga1e92871ee98293f1d075406d7192be32_ga1e92871ee98293f1d075406d7192be32}\label{group___blood_pressure_meter_functions_ga1e92871ee98293f1d075406d7192be32_ga1e92871ee98293f1d075406d7192be32}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!IIRforwardCoeffLowpass\_20Hz@{IIRforwardCoeffLowpass\_20Hz}}
+\index{IIRforwardCoeffLowpass\_20Hz@{IIRforwardCoeffLowpass\_20Hz}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{IIRforwardCoeffLowpass\_20Hz}{IIRforwardCoeffLowpass\_20Hz}}
+{\footnotesize\ttfamily float I\+I\+Rforward\+Coeff\+Lowpass\+\_\+20\+Hz\mbox{[}5\mbox{]}}
+
+Array containing forward coefficients of I\+IR lowpass filter with 20 Hz cut-\/off frequency 
+
+Definition at line 3 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_gaddb6d7546a8db3fa284d91704a0b65db_gaddb6d7546a8db3fa284d91704a0b65db}\label{group___blood_pressure_meter_functions_gaddb6d7546a8db3fa284d91704a0b65db_gaddb6d7546a8db3fa284d91704a0b65db}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!IIRreverseCoeffLowpass\_20Hz@{IIRreverseCoeffLowpass\_20Hz}}
+\index{IIRreverseCoeffLowpass\_20Hz@{IIRreverseCoeffLowpass\_20Hz}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{IIRreverseCoeffLowpass\_20Hz}{IIRreverseCoeffLowpass\_20Hz}}
+{\footnotesize\ttfamily float I\+I\+Rreverse\+Coeff\+Lowpass\+\_\+20\+Hz\mbox{[}5\mbox{]}}
+
+Array containing reverse coefficients of I\+IR lowpass filter with 20 Hz cut-\/off frequency 
+
+Definition at line 4 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga0d23611e28c2af8552ef0fdf90acb469_ga0d23611e28c2af8552ef0fdf90acb469}\label{group___blood_pressure_meter_functions_ga0d23611e28c2af8552ef0fdf90acb469_ga0d23611e28c2af8552ef0fdf90acb469}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!Last128SamplesBuffer@{Last128SamplesBuffer}}
+\index{Last128SamplesBuffer@{Last128SamplesBuffer}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{Last128SamplesBuffer}{Last128SamplesBuffer}}
+{\footnotesize\ttfamily float Last128\+Samples\+Buffer\mbox{[}128\mbox{]}}
+
+Buffer storing last 128 samples of pressure signal
+
+Cyclic buffer with previous samples of signal 
+
+Definition at line 10 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_gaac39a92229e25e30da63f20928f6c46b_gaac39a92229e25e30da63f20928f6c46b}\label{group___blood_pressure_meter_functions_gaac39a92229e25e30da63f20928f6c46b_gaac39a92229e25e30da63f20928f6c46b}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!Last128SamplesBufferHead@{Last128SamplesBufferHead}}
+\index{Last128SamplesBufferHead@{Last128SamplesBufferHead}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{Last128SamplesBufferHead}{Last128SamplesBufferHead}}
+{\footnotesize\ttfamily uint16\+\_\+t Last128\+Samples\+Buffer\+Head}
+
+Buffer pointing on the newest sample in Last128\+Samples\+Buffer\mbox{[}128\mbox{]} buffer
+
+Head of Last128\+Samples\+Buffer buffer 
+
+Definition at line 11 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga074212e81e34d1ed11bfa7238aaa15d0_ga074212e81e34d1ed11bfa7238aaa15d0}\label{group___blood_pressure_meter_functions_ga074212e81e34d1ed11bfa7238aaa15d0_ga074212e81e34d1ed11bfa7238aaa15d0}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!pressureArray@{pressureArray}}
+\index{pressureArray@{pressureArray}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{pressureArray}{pressureArray}}
+{\footnotesize\ttfamily uint16\+\_\+t pressure\+Array\mbox{[}32\mbox{]}}
+
+F\+I\+FO cyclic buffer storing data from pressure sensor
+
+Cyclic buffer with pressure samples from sensor 
+
+Definition at line 6 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga6d2134561d1dccfb4152d385d48c7242_ga6d2134561d1dccfb4152d385d48c7242}\label{group___blood_pressure_meter_functions_ga6d2134561d1dccfb4152d385d48c7242_ga6d2134561d1dccfb4152d385d48c7242}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!pressureArrayHead@{pressureArrayHead}}
+\index{pressureArrayHead@{pressureArrayHead}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{pressureArrayHead}{pressureArrayHead}}
+{\footnotesize\ttfamily volatile uint16\+\_\+t pressure\+Array\+Head}
+
+Variable as index of the newest sample in pressure\+Array\mbox{[}32\mbox{]} buffer
+
+Head of pressure\+Array buffer 
+
+Definition at line 7 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\Hypertarget{group___blood_pressure_meter_functions_ga9c328ec15068b921509854dfaa0adaea_ga9c328ec15068b921509854dfaa0adaea}\label{group___blood_pressure_meter_functions_ga9c328ec15068b921509854dfaa0adaea_ga9c328ec15068b921509854dfaa0adaea}} 
+\index{Blood Pressure Meter Functions@{Blood Pressure Meter Functions}!pressureArrayTail@{pressureArrayTail}}
+\index{pressureArrayTail@{pressureArrayTail}!Blood Pressure Meter Functions@{Blood Pressure Meter Functions}}
+\subsubsection{\texorpdfstring{pressureArrayTail}{pressureArrayTail}}
+{\footnotesize\ttfamily volatile uint16\+\_\+t pressure\+Array\+Tail}
+
+Variable as index of the last sample in pressure\+Array\mbox{[}32\mbox{]} buffer
+
+Tail of pressure\+Array buffer 
+
+Definition at line 8 of file Blood\+Pressure\+Meter\+Functions.\+c.
+

@@ -1,0 +1,213 @@
+\hypertarget{_l_c_d_h_d44780_non_blocking_8c}{}\section{L\+C\+D\+H\+D44780\+Non\+Blocking.\+c File Reference}
+\label{_l_c_d_h_d44780_non_blocking_8c}\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+{\ttfamily \#include \char`\"{}L\+C\+D\+H\+D44780\+Non\+Blocking.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_l_c_d_h_d44780_non_blocking_8c_a69ed77607e30e5935ea2d6994e94be10_a69ed77607e30e5935ea2d6994e94be10}{T\+I\+M2\+\_\+\+I\+R\+Q\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Timer2 interrupt Handler sending data to L\+CD from F\+I\+FO. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{_l_c_d_h_d44780_non_blocking_8c_ad4759d75709e2b5bb8d5173a3907a3e6_ad4759d75709e2b5bb8d5173a3907a3e6}{set\+Pin\+As\+Output}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port, uint32\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Function sets selected G\+P\+IO pin as output. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{_l_c_d_h_d44780_non_blocking_8c_a3c470c357442c6697f971a72790975e8_a3c470c357442c6697f971a72790975e8}{enable\+Clock\+To\+Register}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port)
+\begin{DoxyCompactList}\small\item\em Function enables clock to selected G\+P\+IO port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaccb0e33375f99c7ce3eea8e32781c1ba_gaccb0e33375f99c7ce3eea8e32781c1ba}{L\+C\+D\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Function initializes L\+CD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga73568e70866ca81b92b34ce8a65a01e4_ga73568e70866ca81b92b34ce8a65a01e4}{L\+C\+D\+Send\+Command}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Function writes command to L\+CD F\+I\+FO buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gacbe0b84f31cf18df2b70d509e826db3e_gacbe0b84f31cf18df2b70d509e826db3e}{L\+C\+D\+Send\+Data}} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Function writes data to L\+CD F\+I\+FO buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga198c4cf7d792789662bfa896f5066bb6_ga198c4cf7d792789662bfa896f5066bb6}{L\+C\+D\+Send\+Text}} (char $\ast$text)
+\begin{DoxyCompactList}\small\item\em Function writes data to L\+CD F\+I\+FO buffer. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{_l_c_d_h_d44780_non_blocking_8c_aa62a47eb454afaa0aee3359692855962_aa62a47eb454afaa0aee3359692855962}{L\+C\+D\+Send\+Half\+Byte}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Function writes half byte of data to L\+CD F\+I\+FO buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_gaf43a1b2f3c74fb30ccf5516f8d0953c5_gaf43a1b2f3c74fb30ccf5516f8d0953c5}{L\+C\+D\+Send8bit\+Integer}} (uint8\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Function displays an 8-\/bit integer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d_h_d44780_non_blocking_ga283ac55110a61e344f8a7cbd5b976399_ga283ac55110a61e344f8a7cbd5b976399}{L\+C\+D\+Locate\+XY}} (uint8\+\_\+t x, uint8\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Function sets cursor on selected position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_l_c_d_h_d44780_non_blocking_8c_a3c470c357442c6697f971a72790975e8_a3c470c357442c6697f971a72790975e8}\label{_l_c_d_h_d44780_non_blocking_8c_a3c470c357442c6697f971a72790975e8_a3c470c357442c6697f971a72790975e8}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!enableClockToRegister@{enableClockToRegister}}
+\index{enableClockToRegister@{enableClockToRegister}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{enableClockToRegister()}{enableClockToRegister()}}
+{\footnotesize\ttfamily static void enable\+Clock\+To\+Register (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Function enables clock to selected G\+P\+IO port. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em G\+P\+I\+O\+\_\+port} & Selected G\+P\+IO port \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaccb0e33375f99c7ce3eea8e32781c1ba_gaccb0e33375f99c7ce3eea8e32781c1ba}\label{group___l_c_d_h_d44780_non_blocking_gaccb0e33375f99c7ce3eea8e32781c1ba_gaccb0e33375f99c7ce3eea8e32781c1ba}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!LCDInitialize@{LCDInitialize}}
+\index{LCDInitialize@{LCDInitialize}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{LCDInitialize()}{LCDInitialize()}}
+{\footnotesize\ttfamily void L\+C\+D\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function initializes L\+CD. 
+
+
+
+Definition at line 93 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga283ac55110a61e344f8a7cbd5b976399_ga283ac55110a61e344f8a7cbd5b976399}\label{group___l_c_d_h_d44780_non_blocking_ga283ac55110a61e344f8a7cbd5b976399_ga283ac55110a61e344f8a7cbd5b976399}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!LCDLocateXY@{LCDLocateXY}}
+\index{LCDLocateXY@{LCDLocateXY}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{LCDLocateXY()}{LCDLocateXY()}}
+{\footnotesize\ttfamily void L\+C\+D\+Locate\+XY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Function sets cursor on selected position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & Horizontal coordinate of L\+CD display \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Vertical coordinate of L\+CD display \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 282 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gaf43a1b2f3c74fb30ccf5516f8d0953c5_gaf43a1b2f3c74fb30ccf5516f8d0953c5}\label{group___l_c_d_h_d44780_non_blocking_gaf43a1b2f3c74fb30ccf5516f8d0953c5_gaf43a1b2f3c74fb30ccf5516f8d0953c5}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!LCDSend8bitInteger@{LCDSend8bitInteger}}
+\index{LCDSend8bitInteger@{LCDSend8bitInteger}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{LCDSend8bitInteger()}{LCDSend8bitInteger()}}
+{\footnotesize\ttfamily void L\+C\+D\+Send8bit\+Integer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{number }\end{DoxyParamCaption})}
+
+
+
+Function displays an 8-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em number} & Number in range 0 -\/ 255 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 266 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga73568e70866ca81b92b34ce8a65a01e4_ga73568e70866ca81b92b34ce8a65a01e4}\label{group___l_c_d_h_d44780_non_blocking_ga73568e70866ca81b92b34ce8a65a01e4_ga73568e70866ca81b92b34ce8a65a01e4}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!LCDSendCommand@{LCDSendCommand}}
+\index{LCDSendCommand@{LCDSendCommand}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{LCDSendCommand()}{LCDSendCommand()}}
+{\footnotesize\ttfamily void L\+C\+D\+Send\+Command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Function writes command to L\+CD F\+I\+FO buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & L\+CD command \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_gacbe0b84f31cf18df2b70d509e826db3e_gacbe0b84f31cf18df2b70d509e826db3e}\label{group___l_c_d_h_d44780_non_blocking_gacbe0b84f31cf18df2b70d509e826db3e_gacbe0b84f31cf18df2b70d509e826db3e}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!LCDSendData@{LCDSendData}}
+\index{LCDSendData@{LCDSendData}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{LCDSendData()}{LCDSendData()}}
+{\footnotesize\ttfamily void L\+C\+D\+Send\+Data (\begin{DoxyParamCaption}\item[{unsigned char}]{data }\end{DoxyParamCaption})}
+
+
+
+Function writes data to L\+CD F\+I\+FO buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & L\+CD data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{_l_c_d_h_d44780_non_blocking_8c_aa62a47eb454afaa0aee3359692855962_aa62a47eb454afaa0aee3359692855962}\label{_l_c_d_h_d44780_non_blocking_8c_aa62a47eb454afaa0aee3359692855962_aa62a47eb454afaa0aee3359692855962}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!LCDSendHalfByte@{LCDSendHalfByte}}
+\index{LCDSendHalfByte@{LCDSendHalfByte}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{LCDSendHalfByte()}{LCDSendHalfByte()}}
+{\footnotesize\ttfamily static void L\+C\+D\+Send\+Half\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function writes half byte of data to L\+CD F\+I\+FO buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & L\+CD data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 245 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{group___l_c_d_h_d44780_non_blocking_ga198c4cf7d792789662bfa896f5066bb6_ga198c4cf7d792789662bfa896f5066bb6}\label{group___l_c_d_h_d44780_non_blocking_ga198c4cf7d792789662bfa896f5066bb6_ga198c4cf7d792789662bfa896f5066bb6}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!LCDSendText@{LCDSendText}}
+\index{LCDSendText@{LCDSendText}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{LCDSendText()}{LCDSendText()}}
+{\footnotesize\ttfamily void L\+C\+D\+Send\+Text (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+
+
+
+Function writes data to L\+CD F\+I\+FO buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & String message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 226 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{_l_c_d_h_d44780_non_blocking_8c_ad4759d75709e2b5bb8d5173a3907a3e6_ad4759d75709e2b5bb8d5173a3907a3e6}\label{_l_c_d_h_d44780_non_blocking_8c_ad4759d75709e2b5bb8d5173a3907a3e6_ad4759d75709e2b5bb8d5173a3907a3e6}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!setPinAsOutput@{setPinAsOutput}}
+\index{setPinAsOutput@{setPinAsOutput}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{setPinAsOutput()}{setPinAsOutput()}}
+{\footnotesize\ttfamily static void set\+Pin\+As\+Output (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port,  }\item[{uint32\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Function sets selected G\+P\+IO pin as output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em G\+P\+I\+O\+\_\+port} & Selected G\+P\+IO port \\
+\hline
+\mbox{\texttt{ in}}  & {\em pin} & Selected G\+P\+IO pin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+
+\mbox{\Hypertarget{_l_c_d_h_d44780_non_blocking_8c_a69ed77607e30e5935ea2d6994e94be10_a69ed77607e30e5935ea2d6994e94be10}\label{_l_c_d_h_d44780_non_blocking_8c_a69ed77607e30e5935ea2d6994e94be10_a69ed77607e30e5935ea2d6994e94be10}} 
+\index{LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}!TIM2\_IRQHandler@{TIM2\_IRQHandler}}
+\index{TIM2\_IRQHandler@{TIM2\_IRQHandler}!LCDHD44780NonBlocking.c@{LCDHD44780NonBlocking.c}}
+\subsubsection{\texorpdfstring{TIM2\_IRQHandler()}{TIM2\_IRQHandler()}}
+{\footnotesize\ttfamily void T\+I\+M2\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Timer2 interrupt Handler sending data to L\+CD from F\+I\+FO. 
+
+
+
+Definition at line 6 of file L\+C\+D\+H\+D44780\+Non\+Blocking.\+c.
+

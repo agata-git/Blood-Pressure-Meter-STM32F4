@@ -1,0 +1,12 @@
+--cpu=Cortex-M4.fp
+".\objects\lcdhd44780nonblocking.o"
+".\objects\pressuresensorabpmann005pg2a3.o"
+".\objects\bloodpressuremeterfunctions.o"
+".\objects\firfilterptbypt.o"
+".\objects\main.o"
+".\objects\iirfilterptbypt.o"
+".\objects\startup_stm32f446xx.o"
+".\objects\system_stm32f4xx.o"
+--ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\BloodPressureMeter.map" -o .\Objects\BloodPressureMeter.axf

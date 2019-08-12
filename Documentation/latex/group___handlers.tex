@@ -1,0 +1,140 @@
+\hypertarget{group___handlers}{}\section{Handlers}
+\label{group___handlers}\index{Handlers@{Handlers}}
+
+
+Module containing handlers of all Timers used in project.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___handlers_ga8811e30ebd5ea09370ba3796b69a5c6a_ga8811e30ebd5ea09370ba3796b69a5c6a}{Timers\+Initialization}} (void)
+\begin{DoxyCompactList}\small\item\em Function used for initializing of Timers used in project. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___handlers_gad0e17b57fe51ed2861178f06899345c0_gad0e17b57fe51ed2861178f06899345c0}{I2\+C1\+\_\+\+E\+V\+\_\+\+I\+R\+Q\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em I2\+C1 interrupt handling communication with pressure sensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___handlers_ga2f59315000eb73fdeac2ab44fcd8b972_ga2f59315000eb73fdeac2ab44fcd8b972}{T\+I\+M3\+\_\+\+I\+R\+Q\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em T\+I\+M3 Handler triggering I2C communication every 4 ms ( 250 Hz ) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___handlers_ga6e7703924e97aa04dbae6b88adcec3d1_ga6e7703924e97aa04dbae6b88adcec3d1}{T\+I\+M4\+\_\+\+I\+R\+Q\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em T\+I\+M4 Handler updating variables for controlling data display on L\+CD every 250 ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___handlers_ga5e66446caf21dd90191dc07a13ce2378_ga5e66446caf21dd90191dc07a13ce2378}{T\+I\+M5\+\_\+\+I\+R\+Q\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em T\+I\+M5 Handler for checking if button is pressed and pump/valve turn on/off controlling. T\+I\+M5 enables T\+I\+M3 and T\+I\+M4 when button pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___handlers_ga31b840eb0bc7dbaaf882425d21292c4e_ga31b840eb0bc7dbaaf882425d21292c4e}{calculate}} = 0
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___handlers_ga562013b342dd86247a6939ec1da5a52e_ga562013b342dd86247a6939ec1da5a52e}{display\+On\+L\+C\+Devery1sec}} = 0
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___handlers_ga859225fb2b0f2a730346fa92e3b7fe9b_ga859225fb2b0f2a730346fa92e3b7fe9b}{display\+On\+L\+C\+Devery250milisec}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module containing handlers of all Timers used in project. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___handlers_gad0e17b57fe51ed2861178f06899345c0_gad0e17b57fe51ed2861178f06899345c0}\label{group___handlers_gad0e17b57fe51ed2861178f06899345c0_gad0e17b57fe51ed2861178f06899345c0}} 
+\index{Handlers@{Handlers}!I2C1\_EV\_IRQHandler@{I2C1\_EV\_IRQHandler}}
+\index{I2C1\_EV\_IRQHandler@{I2C1\_EV\_IRQHandler}!Handlers@{Handlers}}
+\subsubsection{\texorpdfstring{I2C1\_EV\_IRQHandler()}{I2C1\_EV\_IRQHandler()}}
+{\footnotesize\ttfamily void I2\+C1\+\_\+\+E\+V\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+I2\+C1 interrupt handling communication with pressure sensor. 
+
+
+
+Definition at line 51 of file Handlers.\+h.
+
+\mbox{\Hypertarget{group___handlers_ga2f59315000eb73fdeac2ab44fcd8b972_ga2f59315000eb73fdeac2ab44fcd8b972}\label{group___handlers_ga2f59315000eb73fdeac2ab44fcd8b972_ga2f59315000eb73fdeac2ab44fcd8b972}} 
+\index{Handlers@{Handlers}!TIM3\_IRQHandler@{TIM3\_IRQHandler}}
+\index{TIM3\_IRQHandler@{TIM3\_IRQHandler}!Handlers@{Handlers}}
+\subsubsection{\texorpdfstring{TIM3\_IRQHandler()}{TIM3\_IRQHandler()}}
+{\footnotesize\ttfamily void T\+I\+M3\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+T\+I\+M3 Handler triggering I2C communication every 4 ms ( 250 Hz ) 
+
+
+
+Definition at line 108 of file Handlers.\+h.
+
+\mbox{\Hypertarget{group___handlers_ga6e7703924e97aa04dbae6b88adcec3d1_ga6e7703924e97aa04dbae6b88adcec3d1}\label{group___handlers_ga6e7703924e97aa04dbae6b88adcec3d1_ga6e7703924e97aa04dbae6b88adcec3d1}} 
+\index{Handlers@{Handlers}!TIM4\_IRQHandler@{TIM4\_IRQHandler}}
+\index{TIM4\_IRQHandler@{TIM4\_IRQHandler}!Handlers@{Handlers}}
+\subsubsection{\texorpdfstring{TIM4\_IRQHandler()}{TIM4\_IRQHandler()}}
+{\footnotesize\ttfamily void T\+I\+M4\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+T\+I\+M4 Handler updating variables for controlling data display on L\+CD every 250 ms. 
+
+
+
+Definition at line 127 of file Handlers.\+h.
+
+\mbox{\Hypertarget{group___handlers_ga5e66446caf21dd90191dc07a13ce2378_ga5e66446caf21dd90191dc07a13ce2378}\label{group___handlers_ga5e66446caf21dd90191dc07a13ce2378_ga5e66446caf21dd90191dc07a13ce2378}} 
+\index{Handlers@{Handlers}!TIM5\_IRQHandler@{TIM5\_IRQHandler}}
+\index{TIM5\_IRQHandler@{TIM5\_IRQHandler}!Handlers@{Handlers}}
+\subsubsection{\texorpdfstring{TIM5\_IRQHandler()}{TIM5\_IRQHandler()}}
+{\footnotesize\ttfamily void T\+I\+M5\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+T\+I\+M5 Handler for checking if button is pressed and pump/valve turn on/off controlling. T\+I\+M5 enables T\+I\+M3 and T\+I\+M4 when button pressed. 
+
+
+
+Definition at line 141 of file Handlers.\+h.
+
+\mbox{\Hypertarget{group___handlers_ga8811e30ebd5ea09370ba3796b69a5c6a_ga8811e30ebd5ea09370ba3796b69a5c6a}\label{group___handlers_ga8811e30ebd5ea09370ba3796b69a5c6a_ga8811e30ebd5ea09370ba3796b69a5c6a}} 
+\index{Handlers@{Handlers}!TimersInitialization@{TimersInitialization}}
+\index{TimersInitialization@{TimersInitialization}!Handlers@{Handlers}}
+\subsubsection{\texorpdfstring{TimersInitialization()}{TimersInitialization()}}
+{\footnotesize\ttfamily void Timers\+Initialization (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function used for initializing of Timers used in project. 
+
+
+
+Definition at line 25 of file Handlers.\+h.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{group___handlers_ga31b840eb0bc7dbaaf882425d21292c4e_ga31b840eb0bc7dbaaf882425d21292c4e}\label{group___handlers_ga31b840eb0bc7dbaaf882425d21292c4e_ga31b840eb0bc7dbaaf882425d21292c4e}} 
+\index{Handlers@{Handlers}!calculate@{calculate}}
+\index{calculate@{calculate}!Handlers@{Handlers}}
+\subsubsection{\texorpdfstring{calculate}{calculate}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t calculate = 0}
+
+Variable controlling calculation on samples from pressure\+Array 
+
+Definition at line 17 of file Handlers.\+h.
+
+\mbox{\Hypertarget{group___handlers_ga562013b342dd86247a6939ec1da5a52e_ga562013b342dd86247a6939ec1da5a52e}\label{group___handlers_ga562013b342dd86247a6939ec1da5a52e_ga562013b342dd86247a6939ec1da5a52e}} 
+\index{Handlers@{Handlers}!displayOnLCDevery1sec@{displayOnLCDevery1sec}}
+\index{displayOnLCDevery1sec@{displayOnLCDevery1sec}!Handlers@{Handlers}}
+\subsubsection{\texorpdfstring{displayOnLCDevery1sec}{displayOnLCDevery1sec}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t display\+On\+L\+C\+Devery1sec = 0}
+
+Variable controlling displaying data on L\+CD every one second 
+
+Definition at line 18 of file Handlers.\+h.
+
+\mbox{\Hypertarget{group___handlers_ga859225fb2b0f2a730346fa92e3b7fe9b_ga859225fb2b0f2a730346fa92e3b7fe9b}\label{group___handlers_ga859225fb2b0f2a730346fa92e3b7fe9b_ga859225fb2b0f2a730346fa92e3b7fe9b}} 
+\index{Handlers@{Handlers}!displayOnLCDevery250milisec@{displayOnLCDevery250milisec}}
+\index{displayOnLCDevery250milisec@{displayOnLCDevery250milisec}!Handlers@{Handlers}}
+\subsubsection{\texorpdfstring{displayOnLCDevery250milisec}{displayOnLCDevery250milisec}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t display\+On\+L\+C\+Devery250milisec = 0}
+
+Variable controlling displaying data on L\+CD every 250 millisecond 
+
+Definition at line 19 of file Handlers.\+h.
+

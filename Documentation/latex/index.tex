@@ -1,0 +1,107 @@
+\begin{DoxyAuthor}{Author}
+Agata Pawlowska ~\newline
+ \href{mailto:agata.pawlowska07@gmail.com}{\texttt{ agata.\+pawlowska07@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
+\begin{DoxyVersion}{Version}
+1.\+0 ~\newline
+ 
+\end{DoxyVersion}
+\begin{DoxyAttention}{Attention}
+Device described here is student\textquotesingle{}s experimental project. Do not rely on measurements taken by device like this one. ~\newline
+
+\end{DoxyAttention}
+~\newline
+\hypertarget{index_hardware_design}{}\section{Hardware design}\label{index_hardware_design}
+\hypertarget{index_diagram}{}\subsection{Block diagram}\label{index_diagram}
+ ~\newline
+ \hypertarget{index_list}{}\subsection{List of parts}\label{index_list}
+
+\begin{DoxyItemize}
+\item N\+U\+C\+L\+EO F446\+RE
+\item L\+CD Keypad Shield
+\item Honeywell Pressure Sensor A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3
+\item K\+O\+GE mini pump K\+P\+M14A 3V
+\item K\+O\+GE electromechanical valve 3V
+\item Transistor N-\/channel B\+S170
+\item P\+NP transistor 2n2905
+\item four-\/way splitter, control aquarium valve, plastic tubes
+\item Solder breadboard, connectors
+\item Hand cuff
+\end{DoxyItemize}\hypertarget{index_photos}{}\subsection{Photos}\label{index_photos}
+    ~\newline
+
+
+~\newline
+\hypertarget{index_device_operation}{}\section{Operation of the device}\label{index_device_operation}
+ ~\newline
+
+
+~\newline
+\hypertarget{index_meas_mechanism}{}\section{Measurement mechanism}\label{index_meas_mechanism}
+During blood pressure measurement by blood pressure meter cuff placed on patient\textquotesingle{}s arm must be inflated till absolute closing of artery. Then valve is opened and cuff is slowly deflated (approximetely 3-\/5 mm\+Hg/s). When pressure in cuff equilibrates pressure in artery blood starts flow. This pressure can be considered as systolic pressure. When pressure in cuff drop below diastolic pressure value oscillation in cuff should disappear (what isn\textquotesingle{}t entirely true as described later).  ~\newline
+ In this project 180 mm\+Hg was assumed as pressure closing artery so the cuff was pumped up to 180 mm\+Hg. Then pump was turned off and valve was opened after 1 second delay in order to stabilize pressure sensor output. ~\newline
+\hypertarget{index_numerical_calculations}{}\section{Numerical calculations}\label{index_numerical_calculations}
+Pressure sensor used in project has digital output so all operations on signal like filtering must be performed digitally by microcontroller. All signals showed below were computed by stm32f446re microcontroller and acquired with S\+TM Studio. Sampling frequency of pressure signal from sensor equals 250 Hz.\hypertarget{index_SYS_pressure_calc}{}\subsection{Systolic pressure evaluation}\label{index_SYS_pressure_calc}
+Systolic pressure was determined as value of first peak detected by sign change of first derivative of pressure signal. Since raw pressure signal contains noise which is significantly increased in differentiated signal, lowpass filtration is necessary. First choice was 3rd order I\+IR lowpass filter with 20Hz cut-\/off frequency. This filter was insufficient -\/ abrupt changes caused by valve opening weren\textquotesingle{}t damped enough as showed on a chart below. As a result that abrupt changes were detected as a first systolic peak.
+
+ Usage of 4th order I\+IR lowpass filter with 20Hz cut-\/off frequency eliminated this problem, as shown on a chart below.   On another chart we can see peak, which was detected by applied method as systolic peak.  \hypertarget{index_DIA_pressure_calc}{}\subsection{Diastolic pressure evaluation}\label{index_DIA_pressure_calc}
+Theoretically, when pressure in cuff drop below diastolic pressure value oscillation in cuff should disappear. In fact, pulsatile blood flow still cause oscillations in partially air filled cuff. In order to detect diastolic pressure using filtered pressure signal more sophisticated procedures like computing pulse wave parameters is needed. 
+
+Therefore diastolic blood pressure was calculated in simplified way, based on Systolic and M\+AP pressure calculations. A common method used to estimate the M\+AP is the following formula \mbox{[}3\mbox{]}\+: \begin{DoxyVerb}                       MAP = DIA + 1/3(SYS – DIA)
+\end{DoxyVerb}
+ Where\+: ~\newline
+ M\+AP -\/ mean arterial pressure ~\newline
+ S\+YS -\/ systolic pressure ~\newline
+ D\+IA -\/ diastolic pressure
+
+Based on this formula D\+IA pressure was calculated as follows\+: \begin{DoxyVerb}                       DIA = (3*MAP - SYS)/2
+\end{DoxyVerb}
+
+
+~\newline
+\hypertarget{index_MAP_pressure_calc}{}\subsection{Mean Arterial Pressure evaluation}\label{index_MAP_pressure_calc}
+Mean Arterial Pressure was determined based on pressure signal after bandpass filtration. One of the the problems was choice of appropriate bandpass filter. Two filters were tested\+: F\+IR filter with lower cut-\/off frequency = 2 Hz and upper cut-\/off frequency = 10 Hz and I\+IR bandpass filter with the same cut-\/off frequencies. Since F\+IR filter introduces a delay, the output signal is shifted in time with respect to the input. Group delay of applied filter is 83 so value of pressure signal 83 samples from before detected highest peak was considered as value corresponded to highest peak bandpass filtered signal.
+
+ ~\newline
+
+
+As shown in the tables below values of M\+AP received by this two bndpass filtered signals in most cases differ from each other. M\+AP values are similar or even identical only when body and respiratory movement during examination were reduced practically to zero. Filtration by I\+IR filter was probably more sensitive on patient movements. Besides, results gained from signal filtered by I\+IR filter were in most cases lower and gave really low diastolic pressure values. Furthermore, signal after filtration by I\+IR bandpass filter is distorted in comparison to signal after F\+IR filtration. Signal after F\+IR bandpass filter is more close to what pulse wave waveform looks like. This effect is caused by unequal group delay, nonlinear phase and fact, that computations were perform on single-\/precision floating-\/point numbers\mbox{[}4\mbox{]}. I\+IR filters are very fast and effective but need for resolution may be critical in some cases, particularly with digital filters, when small but significant numbers combine with large numbers \mbox{[}5\mbox{]}. Efficiency of I\+IR filters in comparison to F\+IR filters results from feedback which requires appropriate precision of computations. Therefore F\+IR filter was chosen. ~\newline
+ Measurements in table below were performed on one person within one hour. Table contains values of M\+AP and diastolic pressure computed using signal filtered with F\+IR bandpass filter and M\+AP and diastolic pressure computed using pressure signal filtered with I\+IR bandpass filter as well.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\multicolumn{2}{c|}{\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Calculations based on F\+IR filtered signal}} }}&\multicolumn{2}{c|}{\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Calculations based on I\+IR filtered signal}}  }}\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\multicolumn{2}{c|}{\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Calculations based on F\+IR filtered signal}} }}&\multicolumn{2}{c|}{\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Calculations based on I\+IR filtered signal}}  }}\\\cline{1-5}
+\endhead
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{S\+YS}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{M\+AP}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{D\+IA}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{M\+AP}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{D\+IA}}  }\\\cline{1-5}
+\PBS\centering 106 &\PBS\centering 78 &\PBS\centering 64 &\PBS\centering 73 &\PBS\centering 57  \\\cline{1-5}
+\PBS\centering 107 &\PBS\centering 81 &\PBS\centering 68 &\PBS\centering 75 &\PBS\centering 59  \\\cline{1-5}
+\PBS\centering 111 &\PBS\centering 80 &\PBS\centering 64 &\PBS\centering 69 &\PBS\centering 48  \\\cline{1-5}
+\PBS\centering 112 &\PBS\centering 79 &\PBS\centering 62 &\PBS\centering 74 &\PBS\centering 55  \\\cline{1-5}
+\PBS\centering 112 &\PBS\centering 77 &\PBS\centering 59 &\PBS\centering 69 &\PBS\centering 48  \\\cline{1-5}
+\PBS\centering 107 &\PBS\centering 78 &\PBS\centering 63 &\PBS\centering 78 &\PBS\centering 63  \\\cline{1-5}
+\PBS\centering 113 &\PBS\centering 85 &\PBS\centering 72 &\PBS\centering 72 &\PBS\centering 52  \\\cline{1-5}
+\PBS\centering 104 &\PBS\centering 79 &\PBS\centering 67 &\PBS\centering 79 &\PBS\centering 67  \\\cline{1-5}
+\PBS\centering 113 &\PBS\centering 87 &\PBS\centering 74 &\PBS\centering 74 &\PBS\centering 55  \\\cline{1-5}
+\PBS\centering 112 &\PBS\centering 84 &\PBS\centering 70 &\PBS\centering 73 &\PBS\centering 54  \\\cline{1-5}
+\end{longtabu}
+~\newline
+\hypertarget{index_chart}{}\section{Blood pressure chart}\label{index_chart}
+\hypertarget{index_references}{}\section{References}\label{index_references}
+
+\begin{DoxyEnumerate}
+\item P\+E\+T\+R\+IE, J. C., O\textquotesingle{}B\+R\+I\+EN, E. T., L\+I\+T\+T\+L\+ER, W. A. and D$\sim$ Sw\+Err, M. (1986)\+: \textquotesingle{}British Hypertensive Society\+: Recommendations on blood pressure measurements\textquotesingle{}, Br. Med. J , 293, pp. 611-\/615
+\item Leslie Alexander Geddes, M H Voelz, Christopher L. Combs, David S. Reiner, Charles F. Babbs\+: Characterization of the oscillometric method for measuring indirect blood pressure, D\+OI\+:10.\+1007/\+B\+F02367308, Published in Annals of Biomedical Engineering 1982
+\item \href{https://www.ncbi.nlm.nih.gov/books/NBK538226/}{\texttt{ https\+://www.\+ncbi.\+nlm.\+nih.\+gov/books/\+N\+B\+K538226/}}
+\item Steven W. Smith\+: Digital Signal Processing -\/ A Practical Guide for Engineers and Scientists, 2002
+\item \href{https://www.rane.com/note157.html}{\texttt{ https\+://www.\+rane.\+com/note157.\+html}}
+\item \href{https://universityhealthnews.com/daily/heart-health/blood-pressure-chart-where-do-your-numbers-fit/}{\texttt{ https\+://universityhealthnews.\+com/daily/heart-\/health/blood-\/pressure-\/chart-\/where-\/do-\/your-\/numbers-\/fit/}} 
+\end{DoxyEnumerate}

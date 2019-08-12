@@ -1,0 +1,17 @@
+.\objects\main.o: main.c
+.\objects\main.o: C:\Users\Agata\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+.\objects\main.o: C:\Users\Agata\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f446xx.h
+.\objects\main.o: C:\Users\Agata\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\core_cm4.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: C:\Users\Agata\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_version.h
+.\objects\main.o: C:\Users\Agata\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\main.o: C:\Users\Agata\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\main.o: C:\Users\Agata\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\mpu_armv7.h
+.\objects\main.o: C:\Users\Agata\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
+.\objects\main.o: Handlers.h
+.\objects\main.o: LCDHD44780NonBlocking.h
+.\objects\main.o: BloodPressureMeterFunctions.h
+.\objects\main.o: PressureSensorABPMANN005PG2A3.h
+.\objects\main.o: FIRbandpass_3_10_Hz_Coeff.h
+.\objects\main.o: FIRfilterPtByPt.h
+.\objects\main.o: IIRfilterPtByPt.h

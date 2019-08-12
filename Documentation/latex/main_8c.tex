@@ -1,0 +1,166 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Handlers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+C\+D\+H\+D44780\+Non\+Blocking.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Blood\+Pressure\+Meter\+Functions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pressure\+Sensor\+A\+B\+P\+M\+A\+N\+N005\+P\+G2\+A3.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}F\+I\+Rbandpass\+\_\+3\+\_\+10\+\_\+\+Hz\+\_\+\+Coeff.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}F\+I\+Rfilter\+Pt\+By\+Pt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}I\+I\+Rfilter\+Pt\+By\+Pt.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structpulse_wave__}{pulse\+Wave\+\_\+}} \mbox{\hyperlink{main_8c_a725a56e95d3c9606e5fc451d12161855_a725a56e95d3c9606e5fc451d12161855}{\+\_\+pulse\+Wave}}
+\item 
+\mbox{\hyperlink{structpulse_wave__}{pulse\+Wave\+\_\+}} $\ast$ \mbox{\hyperlink{main_8c_a025807f0460ce24ef742099d9eef0b53_a025807f0460ce24ef742099d9eef0b53}{pulse\+Wave}} = \&\mbox{\hyperlink{main_8c_a725a56e95d3c9606e5fc451d12161855_a725a56e95d3c9606e5fc451d12161855}{\+\_\+pulse\+Wave}}
+\item 
+\mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} \mbox{\hyperlink{main_8c_a9c8a1f656e67c8274095275a5cfe9b09_a9c8a1f656e67c8274095275a5cfe9b09}{\+\_\+\+Bandpass\+F\+I\+Rfilter}}
+\item 
+\mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} $\ast$ \mbox{\hyperlink{main_8c_a795dac5c199447299603620fdede983f_a795dac5c199447299603620fdede983f}{Bandpass\+F\+I\+Rfilter}} = \&\mbox{\hyperlink{main_8c_a9c8a1f656e67c8274095275a5cfe9b09_a9c8a1f656e67c8274095275a5cfe9b09}{\+\_\+\+Bandpass\+F\+I\+Rfilter}}
+\item 
+\mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}} \mbox{\hyperlink{main_8c_aa72490f3fc03e8e48e8d9753494a0574_aa72490f3fc03e8e48e8d9753494a0574}{\+\_\+\+Lowpass\+I\+I\+Rfilter}}
+\item 
+\mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}} $\ast$ \mbox{\hyperlink{main_8c_abb17f5109b09e3b14384f6bfbfedd996_abb17f5109b09e3b14384f6bfbfedd996}{Lowpass\+I\+I\+Rfilter}} = \&\mbox{\hyperlink{main_8c_aa72490f3fc03e8e48e8d9753494a0574_aa72490f3fc03e8e48e8d9753494a0574}{\+\_\+\+Lowpass\+I\+I\+Rfilter}}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___handlers_ga31b840eb0bc7dbaaf882425d21292c4e_ga31b840eb0bc7dbaaf882425d21292c4e}{calculate}}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___handlers_ga562013b342dd86247a6939ec1da5a52e_ga562013b342dd86247a6939ec1da5a52e}{display\+On\+L\+C\+Devery1sec}}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___handlers_ga859225fb2b0f2a730346fa92e3b7fe9b_ga859225fb2b0f2a730346fa92e3b7fe9b}{display\+On\+L\+C\+Devery250milisec}}
+\item 
+float \mbox{\hyperlink{main_8c_aba77431a2a560844f4432c7a54a2a649_aba77431a2a560844f4432c7a54a2a649}{F\+I\+Rbandpass\+\_\+3\+\_\+10\+\_\+\+Hz\+\_\+\+Coeff}} \mbox{[}166\mbox{]}
+\item 
+float \mbox{\hyperlink{main_8c_a70559dcc8f17b980b438d31f3de9f9a0_a70559dcc8f17b980b438d31f3de9f9a0}{signal\+Buffer\+For\+Bandpass\+F\+I\+Rfilter}} \mbox{[}256\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file main.\+c.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a9c8a1f656e67c8274095275a5cfe9b09_a9c8a1f656e67c8274095275a5cfe9b09}\label{main_8c_a9c8a1f656e67c8274095275a5cfe9b09_a9c8a1f656e67c8274095275a5cfe9b09}} 
+\index{main.c@{main.c}!\_BandpassFIRfilter@{\_BandpassFIRfilter}}
+\index{\_BandpassFIRfilter@{\_BandpassFIRfilter}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{\_BandpassFIRfilter}{\_BandpassFIRfilter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} \+\_\+\+Bandpass\+F\+I\+Rfilter}
+
+
+
+Definition at line 25 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_aa72490f3fc03e8e48e8d9753494a0574_aa72490f3fc03e8e48e8d9753494a0574}\label{main_8c_aa72490f3fc03e8e48e8d9753494a0574_aa72490f3fc03e8e48e8d9753494a0574}} 
+\index{main.c@{main.c}!\_LowpassIIRfilter@{\_LowpassIIRfilter}}
+\index{\_LowpassIIRfilter@{\_LowpassIIRfilter}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{\_LowpassIIRfilter}{\_LowpassIIRfilter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}} \+\_\+\+Lowpass\+I\+I\+Rfilter}
+
+
+
+Definition at line 27 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a725a56e95d3c9606e5fc451d12161855_a725a56e95d3c9606e5fc451d12161855}\label{main_8c_a725a56e95d3c9606e5fc451d12161855_a725a56e95d3c9606e5fc451d12161855}} 
+\index{main.c@{main.c}!\_pulseWave@{\_pulseWave}}
+\index{\_pulseWave@{\_pulseWave}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{\_pulseWave}{\_pulseWave}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpulse_wave__}{pulse\+Wave\+\_\+}} \+\_\+pulse\+Wave}
+
+
+
+Definition at line 22 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a795dac5c199447299603620fdede983f_a795dac5c199447299603620fdede983f}\label{main_8c_a795dac5c199447299603620fdede983f_a795dac5c199447299603620fdede983f}} 
+\index{main.c@{main.c}!BandpassFIRfilter@{BandpassFIRfilter}}
+\index{BandpassFIRfilter@{BandpassFIRfilter}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{BandpassFIRfilter}{BandpassFIRfilter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}}$\ast$ Bandpass\+F\+I\+Rfilter = \&\mbox{\hyperlink{main_8c_a9c8a1f656e67c8274095275a5cfe9b09_a9c8a1f656e67c8274095275a5cfe9b09}{\+\_\+\+Bandpass\+F\+I\+Rfilter}}}
+
+
+
+Definition at line 26 of file main.\+c.
+
+\mbox{\Hypertarget{group___handlers_ga31b840eb0bc7dbaaf882425d21292c4e_ga31b840eb0bc7dbaaf882425d21292c4e}\label{group___handlers_ga31b840eb0bc7dbaaf882425d21292c4e_ga31b840eb0bc7dbaaf882425d21292c4e}} 
+\index{main.c@{main.c}!calculate@{calculate}}
+\index{calculate@{calculate}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{calculate}{calculate}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t calculate}
+
+Variable controlling calculation on samples from pressure\+Array 
+
+Definition at line 17 of file Handlers.\+h.
+
+\mbox{\Hypertarget{group___handlers_ga562013b342dd86247a6939ec1da5a52e_ga562013b342dd86247a6939ec1da5a52e}\label{group___handlers_ga562013b342dd86247a6939ec1da5a52e_ga562013b342dd86247a6939ec1da5a52e}} 
+\index{main.c@{main.c}!displayOnLCDevery1sec@{displayOnLCDevery1sec}}
+\index{displayOnLCDevery1sec@{displayOnLCDevery1sec}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{displayOnLCDevery1sec}{displayOnLCDevery1sec}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t display\+On\+L\+C\+Devery1sec}
+
+Variable controlling displaying data on L\+CD every one second 
+
+Definition at line 18 of file Handlers.\+h.
+
+\mbox{\Hypertarget{group___handlers_ga859225fb2b0f2a730346fa92e3b7fe9b_ga859225fb2b0f2a730346fa92e3b7fe9b}\label{group___handlers_ga859225fb2b0f2a730346fa92e3b7fe9b_ga859225fb2b0f2a730346fa92e3b7fe9b}} 
+\index{main.c@{main.c}!displayOnLCDevery250milisec@{displayOnLCDevery250milisec}}
+\index{displayOnLCDevery250milisec@{displayOnLCDevery250milisec}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{displayOnLCDevery250milisec}{displayOnLCDevery250milisec}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t display\+On\+L\+C\+Devery250milisec}
+
+Variable controlling displaying data on L\+CD every 250 millisecond 
+
+Definition at line 19 of file Handlers.\+h.
+
+\mbox{\Hypertarget{main_8c_aba77431a2a560844f4432c7a54a2a649_aba77431a2a560844f4432c7a54a2a649}\label{main_8c_aba77431a2a560844f4432c7a54a2a649_aba77431a2a560844f4432c7a54a2a649}} 
+\index{main.c@{main.c}!FIRbandpass\_3\_10\_Hz\_Coeff@{FIRbandpass\_3\_10\_Hz\_Coeff}}
+\index{FIRbandpass\_3\_10\_Hz\_Coeff@{FIRbandpass\_3\_10\_Hz\_Coeff}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{FIRbandpass\_3\_10\_Hz\_Coeff}{FIRbandpass\_3\_10\_Hz\_Coeff}}
+{\footnotesize\ttfamily float F\+I\+Rbandpass\+\_\+3\+\_\+10\+\_\+\+Hz\+\_\+\+Coeff\mbox{[}166\mbox{]}}
+
+
+
+Definition at line 23 of file F\+I\+Rbandpass\+\_\+3\+\_\+10\+\_\+\+Hz\+\_\+\+Coeff.\+h.
+
+\mbox{\Hypertarget{main_8c_abb17f5109b09e3b14384f6bfbfedd996_abb17f5109b09e3b14384f6bfbfedd996}\label{main_8c_abb17f5109b09e3b14384f6bfbfedd996_abb17f5109b09e3b14384f6bfbfedd996}} 
+\index{main.c@{main.c}!LowpassIIRfilter@{LowpassIIRfilter}}
+\index{LowpassIIRfilter@{LowpassIIRfilter}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{LowpassIIRfilter}{LowpassIIRfilter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}}$\ast$ Lowpass\+I\+I\+Rfilter = \&\mbox{\hyperlink{main_8c_aa72490f3fc03e8e48e8d9753494a0574_aa72490f3fc03e8e48e8d9753494a0574}{\+\_\+\+Lowpass\+I\+I\+Rfilter}}}
+
+
+
+Definition at line 28 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a025807f0460ce24ef742099d9eef0b53_a025807f0460ce24ef742099d9eef0b53}\label{main_8c_a025807f0460ce24ef742099d9eef0b53_a025807f0460ce24ef742099d9eef0b53}} 
+\index{main.c@{main.c}!pulseWave@{pulseWave}}
+\index{pulseWave@{pulseWave}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{pulseWave}{pulseWave}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpulse_wave__}{pulse\+Wave\+\_\+}}$\ast$ pulse\+Wave = \&\mbox{\hyperlink{main_8c_a725a56e95d3c9606e5fc451d12161855_a725a56e95d3c9606e5fc451d12161855}{\+\_\+pulse\+Wave}}}
+
+
+
+Definition at line 23 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a70559dcc8f17b980b438d31f3de9f9a0_a70559dcc8f17b980b438d31f3de9f9a0}\label{main_8c_a70559dcc8f17b980b438d31f3de9f9a0_a70559dcc8f17b980b438d31f3de9f9a0}} 
+\index{main.c@{main.c}!signalBufferForBandpassFIRfilter@{signalBufferForBandpassFIRfilter}}
+\index{signalBufferForBandpassFIRfilter@{signalBufferForBandpassFIRfilter}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{signalBufferForBandpassFIRfilter}{signalBufferForBandpassFIRfilter}}
+{\footnotesize\ttfamily float signal\+Buffer\+For\+Bandpass\+F\+I\+Rfilter\mbox{[}256\mbox{]}}
+
+
+
+Definition at line 39 of file main.\+c.
+

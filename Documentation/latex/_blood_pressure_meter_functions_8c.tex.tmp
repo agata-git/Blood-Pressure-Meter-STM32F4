@@ -1,0 +1,206 @@
+\section{Blood\+Pressure\+Meter\+Functions.\+c File Reference}
+\label{_blood_pressure_meter_functions_8c}\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+{\ttfamily \#include \char`\"{}Blood\+Pressure\+Meter\+Functions.\+h\char`\"{}}\newline
+Include dependency graph for Blood\+Pressure\+Meter\+Functions.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ R\+C\+C\+Clock\+Configuration} (void)
+\begin{DoxyCompactList}\small\item\em Function for setting core clock, A\+H\+B1, A\+P\+B1 clock on 42M\+Hz. \end{DoxyCompactList}\item 
+void \textbf{ Pump\+Valve\+Button\+Configuration} (void)
+\begin{DoxyCompactList}\small\item\em Function used for pump, valve and button pins initialization. \end{DoxyCompactList}\item 
+static void \textbf{ enable\+Clock\+To\+Register} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port)
+\begin{DoxyCompactList}\small\item\em Function enables clock to selected G\+P\+IO port. \end{DoxyCompactList}\item 
+static void \textbf{ set\+Pin\+As\+Output} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port, uint32\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Function sets selected G\+P\+IO pin as output. \end{DoxyCompactList}\item 
+static void \textbf{ set\+Pin\+As\+Input} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+O\+\_\+port, uint32\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Function sets selected G\+P\+IO pin as input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ I\+I\+Rforward\+Coeff\+Lowpass\+\_\+20\+Hz} [5] = \{0.\+000183216023370f, 0.\+000732864093479f, 0.\+001099296140218f, 0.\+000732864093479f, 0.\+000183216023370f\}
+\item 
+float \textbf{ I\+I\+Rreverse\+Coeff\+Lowpass\+\_\+20\+Hz} [5] = \{1.\+000000000000000f, -\/3.\+344067837711877f, 4.\+238863950884074f, -\/2.\+409342856586326f, 0.\+517478199788043f\}
+\item 
+uint16\+\_\+t \textbf{ pressure\+Array} [32]
+\item 
+volatile uint16\+\_\+t \textbf{ pressure\+Array\+Head}
+\item 
+volatile uint16\+\_\+t \textbf{ pressure\+Array\+Tail}
+\item 
+float \textbf{ Last128\+Samples\+Buffer} [128]
+\item 
+uint16\+\_\+t \textbf{ Last128\+Samples\+Buffer\+Head}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{_blood_pressure_meter_functions_8c_a3c470c357442c6697f971a72790975e8_a3c470c357442c6697f971a72790975e8}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!enableClockToRegister@{enableClockToRegister}}
+\index{enableClockToRegister@{enableClockToRegister}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{enableClockToRegister()}
+{\footnotesize\ttfamily static void enable\+Clock\+To\+Register (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Function enables clock to selected G\+P\+IO port. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em G\+P\+I\+O\+\_\+port} & Selected G\+P\+IO port \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\label{group___blood_pressure_meter_functions_ga24734fd14f8f6338455dc6876c088dd1_ga24734fd14f8f6338455dc6876c088dd1}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!PumpValveButtonConfiguration@{PumpValveButtonConfiguration}}
+\index{PumpValveButtonConfiguration@{PumpValveButtonConfiguration}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{PumpValveButtonConfiguration()}
+{\footnotesize\ttfamily void Pump\+Valve\+Button\+Configuration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function used for pump, valve and button pins initialization. 
+
+
+
+Definition at line 60 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\label{group___blood_pressure_meter_functions_ga3a2706feaeba456e1fc2bb14be91fd22_ga3a2706feaeba456e1fc2bb14be91fd22}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!RCCClockConfiguration@{RCCClockConfiguration}}
+\index{RCCClockConfiguration@{RCCClockConfiguration}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{RCCClockConfiguration()}
+{\footnotesize\ttfamily void R\+C\+C\+Clock\+Configuration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function for setting core clock, A\+H\+B1, A\+P\+B1 clock on 42M\+Hz. 
+
+
+
+Definition at line 16 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\label{_blood_pressure_meter_functions_8c_ab108244597f329a2bc329694c6fa08e4_ab108244597f329a2bc329694c6fa08e4}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!setPinAsInput@{setPinAsInput}}
+\index{setPinAsInput@{setPinAsInput}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{setPinAsInput()}
+{\footnotesize\ttfamily static void set\+Pin\+As\+Input (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port,  }\item[{uint32\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Function sets selected G\+P\+IO pin as input. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em G\+P\+I\+O\+\_\+port} & Selected G\+P\+IO port \\
+\hline
+\mbox{\texttt{ in}}  & {\em pin} & Selected G\+P\+IO pin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\label{_blood_pressure_meter_functions_8c_ad4759d75709e2b5bb8d5173a3907a3e6_ad4759d75709e2b5bb8d5173a3907a3e6}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!setPinAsOutput@{setPinAsOutput}}
+\index{setPinAsOutput@{setPinAsOutput}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{setPinAsOutput()}
+{\footnotesize\ttfamily static void set\+Pin\+As\+Output (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+O\+\_\+port,  }\item[{uint32\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Function sets selected G\+P\+IO pin as output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em G\+P\+I\+O\+\_\+port} & Selected G\+P\+IO port \\
+\hline
+\mbox{\texttt{ in}}  & {\em pin} & Selected G\+P\+IO pin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\subsection{Variable Documentation}
+\mbox{\label{group___blood_pressure_meter_functions_ga1e92871ee98293f1d075406d7192be32_ga1e92871ee98293f1d075406d7192be32}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!IIRforwardCoeffLowpass\_20Hz@{IIRforwardCoeffLowpass\_20Hz}}
+\index{IIRforwardCoeffLowpass\_20Hz@{IIRforwardCoeffLowpass\_20Hz}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{IIRforwardCoeffLowpass\_20Hz}
+{\footnotesize\ttfamily float I\+I\+Rforward\+Coeff\+Lowpass\+\_\+20\+Hz[5] = \{0.\+000183216023370f, 0.\+000732864093479f, 0.\+001099296140218f, 0.\+000732864093479f, 0.\+000183216023370f\}}
+
+Array containing forward coefficients of I\+IR lowpass filter with 20 Hz cut-\/off frequency 
+
+Definition at line 3 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\label{group___blood_pressure_meter_functions_gaddb6d7546a8db3fa284d91704a0b65db_gaddb6d7546a8db3fa284d91704a0b65db}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!IIRreverseCoeffLowpass\_20Hz@{IIRreverseCoeffLowpass\_20Hz}}
+\index{IIRreverseCoeffLowpass\_20Hz@{IIRreverseCoeffLowpass\_20Hz}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{IIRreverseCoeffLowpass\_20Hz}
+{\footnotesize\ttfamily float I\+I\+Rreverse\+Coeff\+Lowpass\+\_\+20\+Hz[5] = \{1.\+000000000000000f, -\/3.\+344067837711877f, 4.\+238863950884074f, -\/2.\+409342856586326f, 0.\+517478199788043f\}}
+
+Array containing reverse coefficients of I\+IR lowpass filter with 20 Hz cut-\/off frequency 
+
+Definition at line 4 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\label{group___blood_pressure_meter_functions_ga0d23611e28c2af8552ef0fdf90acb469_ga0d23611e28c2af8552ef0fdf90acb469}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!Last128SamplesBuffer@{Last128SamplesBuffer}}
+\index{Last128SamplesBuffer@{Last128SamplesBuffer}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{Last128SamplesBuffer}
+{\footnotesize\ttfamily float Last128\+Samples\+Buffer[128]}
+
+Cyclic buffer with previous samples of signal 
+
+Definition at line 10 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\label{group___blood_pressure_meter_functions_gaac39a92229e25e30da63f20928f6c46b_gaac39a92229e25e30da63f20928f6c46b}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!Last128SamplesBufferHead@{Last128SamplesBufferHead}}
+\index{Last128SamplesBufferHead@{Last128SamplesBufferHead}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{Last128SamplesBufferHead}
+{\footnotesize\ttfamily uint16\+\_\+t Last128\+Samples\+Buffer\+Head}
+
+Head of Last128\+Samples\+Buffer buffer 
+
+Definition at line 11 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\label{group___blood_pressure_meter_functions_ga074212e81e34d1ed11bfa7238aaa15d0_ga074212e81e34d1ed11bfa7238aaa15d0}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!pressureArray@{pressureArray}}
+\index{pressureArray@{pressureArray}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{pressureArray}
+{\footnotesize\ttfamily uint16\+\_\+t pressure\+Array[32]}
+
+Cyclic buffer with pressure samples from sensor 
+
+Definition at line 6 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\label{group___blood_pressure_meter_functions_ga6d2134561d1dccfb4152d385d48c7242_ga6d2134561d1dccfb4152d385d48c7242}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!pressureArrayHead@{pressureArrayHead}}
+\index{pressureArrayHead@{pressureArrayHead}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{pressureArrayHead}
+{\footnotesize\ttfamily volatile uint16\+\_\+t pressure\+Array\+Head}
+
+Head of pressure\+Array buffer 
+
+Definition at line 7 of file Blood\+Pressure\+Meter\+Functions.\+c.
+
+\mbox{\label{group___blood_pressure_meter_functions_ga9c328ec15068b921509854dfaa0adaea_ga9c328ec15068b921509854dfaa0adaea}} 
+\index{BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}!pressureArrayTail@{pressureArrayTail}}
+\index{pressureArrayTail@{pressureArrayTail}!BloodPressureMeterFunctions.c@{BloodPressureMeterFunctions.c}}
+\subsubsection{pressureArrayTail}
+{\footnotesize\ttfamily volatile uint16\+\_\+t pressure\+Array\+Tail}
+
+Tail of pressure\+Array buffer 
+
+Definition at line 8 of file Blood\+Pressure\+Meter\+Functions.\+c.
+

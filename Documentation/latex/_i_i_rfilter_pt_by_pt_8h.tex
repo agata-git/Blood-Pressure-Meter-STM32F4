@@ -1,0 +1,222 @@
+\hypertarget{_i_i_rfilter_pt_by_pt_8h}{}\section{I\+I\+Rfilter\+Pt\+By\+Pt.\+h File Reference}
+\label{_i_i_rfilter_pt_by_pt_8h}\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_i_r2nd_order_filter_obj}{I\+I\+R2nd\+Order\+Filter\+Obj}}
+\begin{DoxyCompactList}\small\item\em Structure containing variables and pointers which should be initialized for every I\+IR 2nd order filter object by initialization function only once and must be unchanged during program operation. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_i_i_r3rd_order_filter_obj}{I\+I\+R3rd\+Order\+Filter\+Obj}}
+\begin{DoxyCompactList}\small\item\em Structure containing variables and pointers which should be initialized for every I\+IR 3rd order filter object by initialization function only once and must be unchanged during program operation. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}}
+\begin{DoxyCompactList}\small\item\em Structure containing variables and pointers which should be initialized for every I\+IR 4th order filter object by initialization function only once and must be unchanged during program operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_i_r2nd_order_filter_obj}{I\+I\+R2nd\+Order\+Filter\+Obj}} \mbox{\hyperlink{group___i_i_rfilter_pt_by_pt_ga8546a467eb7a73cec439600d41273514_ga8546a467eb7a73cec439600d41273514}{I\+I\+R2nd\+Order\+Filter\+Obj}}
+\begin{DoxyCompactList}\small\item\em Structure containing variables and pointers which should be initialized for every I\+IR 2nd order filter object by initialization function only once and must be unchanged during program operation. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_i_i_r3rd_order_filter_obj}{I\+I\+R3rd\+Order\+Filter\+Obj}} \mbox{\hyperlink{group___i_i_rfilter_pt_by_pt_ga28932217270b94db6230648e203eb4ea_ga28932217270b94db6230648e203eb4ea}{I\+I\+R3rd\+Order\+Filter\+Obj}}
+\begin{DoxyCompactList}\small\item\em Structure containing variables and pointers which should be initialized for every I\+IR 3rd order filter object by initialization function only once and must be unchanged during program operation. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}} \mbox{\hyperlink{group___i_i_rfilter_pt_by_pt_ga926ddf6d792e658ea77b7321c3d4fe0d_ga926ddf6d792e658ea77b7321c3d4fe0d}{I\+I\+R4th\+Order\+Filter\+Obj}}
+\begin{DoxyCompactList}\small\item\em Structure containing variables and pointers which should be initialized for every I\+IR 4th order filter object by initialization function only once and must be unchanged during program operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_i_i_r2nd_order_filter_obj}{I\+I\+R2nd\+Order\+Filter\+Obj}} \mbox{\hyperlink{group___i_i_rfilter_pt_by_pt_gaf289af032ed0838cac25efd5cc1ea639_gaf289af032ed0838cac25efd5cc1ea639}{I\+I\+R\+\_\+2nd\+Order\+Signal\+Filtering\+Pt\+By\+Pt\+Initialize}} (float forward\+Coeff\mbox{[}3\mbox{]}, float reverse\+Coeff\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function used for initialization I\+IR 2nd order filter structure used for filtering. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_i_i_r3rd_order_filter_obj}{I\+I\+R3rd\+Order\+Filter\+Obj}} \mbox{\hyperlink{group___i_i_rfilter_pt_by_pt_gad9f7b6a49c25d0716d840945adde16db_gad9f7b6a49c25d0716d840945adde16db}{I\+I\+R\+\_\+3rd\+Order\+Signal\+Filtering\+Pt\+By\+Pt\+Initialize}} (float forward\+Coeff\mbox{[}4\mbox{]}, float reverse\+Coeff\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function used for initialization I\+IR 3rd order filter structure used for filtering. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}} \mbox{\hyperlink{group___i_i_rfilter_pt_by_pt_gaaa95a7e8b259b53ea999d004611acd54_gaaa95a7e8b259b53ea999d004611acd54}{I\+I\+R\+\_\+4th\+Order\+Signal\+Filtering\+Pt\+By\+Pt\+Initialize}} (float forward\+Coeff\mbox{[}5\mbox{]}, float reverse\+Coeff\mbox{[}5\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function used for initialization I\+IR 4th order filter structure used for filtering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_i_rfilter_pt_by_pt_gac4abd6664e9f907ee9a9a7dc9bb9f72a_gac4abd6664e9f907ee9a9a7dc9bb9f72a}{I\+I\+R\+\_\+2nd\+Order\+Signal\+Filtering\+Pt\+By\+Pt}} (\mbox{\hyperlink{struct_i_i_r2nd_order_filter_obj}{I\+I\+R2nd\+Order\+Filter\+Obj}} $\ast$filter\+Object, float signal, float $\ast$result)
+\begin{DoxyCompactList}\small\item\em Function for recursive Infinite Impulse Response 2nd order filtering of input signal point-\/by-\/point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_i_rfilter_pt_by_pt_ga5c85182c2d872ceb73f5e9410b44b361_ga5c85182c2d872ceb73f5e9410b44b361}{I\+I\+R\+\_\+3rd\+Order\+Signal\+Filtering\+Pt\+By\+Pt}} (\mbox{\hyperlink{struct_i_i_r3rd_order_filter_obj}{I\+I\+R3rd\+Order\+Filter\+Obj}} $\ast$filter\+Object, float signal, float $\ast$result)
+\begin{DoxyCompactList}\small\item\em Function for recursive Infinite Impulse Response 3rd order filtering of input signal point-\/by-\/point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_i_rfilter_pt_by_pt_gaa0781bdc4c0b1a47f265ffb6c2a3261b_gaa0781bdc4c0b1a47f265ffb6c2a3261b}{I\+I\+R\+\_\+4th\+Order\+Signal\+Filtering\+Pt\+By\+Pt}} (\mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}} $\ast$filter\+Object, float signal, float $\ast$result)
+\begin{DoxyCompactList}\small\item\em Function for recursive Infinite Impulse Response 4th order filtering of input signal point-\/by-\/point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{group___i_i_rfilter_pt_by_pt_ga8546a467eb7a73cec439600d41273514_ga8546a467eb7a73cec439600d41273514}\label{group___i_i_rfilter_pt_by_pt_ga8546a467eb7a73cec439600d41273514_ga8546a467eb7a73cec439600d41273514}} 
+\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}!IIR2ndOrderFilterObj@{IIR2ndOrderFilterObj}}
+\index{IIR2ndOrderFilterObj@{IIR2ndOrderFilterObj}!IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+\subsubsection{\texorpdfstring{IIR2ndOrderFilterObj}{IIR2ndOrderFilterObj}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_i_r2nd_order_filter_obj}{I\+I\+R2nd\+Order\+Filter\+Obj}}  \mbox{\hyperlink{struct_i_i_r2nd_order_filter_obj}{I\+I\+R2nd\+Order\+Filter\+Obj}}}
+
+
+
+Structure containing variables and pointers which should be initialized for every I\+IR 2nd order filter object by initialization function only once and must be unchanged during program operation. 
+
+\mbox{\Hypertarget{group___i_i_rfilter_pt_by_pt_ga28932217270b94db6230648e203eb4ea_ga28932217270b94db6230648e203eb4ea}\label{group___i_i_rfilter_pt_by_pt_ga28932217270b94db6230648e203eb4ea_ga28932217270b94db6230648e203eb4ea}} 
+\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}!IIR3rdOrderFilterObj@{IIR3rdOrderFilterObj}}
+\index{IIR3rdOrderFilterObj@{IIR3rdOrderFilterObj}!IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+\subsubsection{\texorpdfstring{IIR3rdOrderFilterObj}{IIR3rdOrderFilterObj}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_i_r3rd_order_filter_obj}{I\+I\+R3rd\+Order\+Filter\+Obj}}  \mbox{\hyperlink{struct_i_i_r3rd_order_filter_obj}{I\+I\+R3rd\+Order\+Filter\+Obj}}}
+
+
+
+Structure containing variables and pointers which should be initialized for every I\+IR 3rd order filter object by initialization function only once and must be unchanged during program operation. 
+
+\mbox{\Hypertarget{group___i_i_rfilter_pt_by_pt_ga926ddf6d792e658ea77b7321c3d4fe0d_ga926ddf6d792e658ea77b7321c3d4fe0d}\label{group___i_i_rfilter_pt_by_pt_ga926ddf6d792e658ea77b7321c3d4fe0d_ga926ddf6d792e658ea77b7321c3d4fe0d}} 
+\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}!IIR4thOrderFilterObj@{IIR4thOrderFilterObj}}
+\index{IIR4thOrderFilterObj@{IIR4thOrderFilterObj}!IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+\subsubsection{\texorpdfstring{IIR4thOrderFilterObj}{IIR4thOrderFilterObj}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}}  \mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}}}
+
+
+
+Structure containing variables and pointers which should be initialized for every I\+IR 4th order filter object by initialization function only once and must be unchanged during program operation. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___i_i_rfilter_pt_by_pt_gac4abd6664e9f907ee9a9a7dc9bb9f72a_gac4abd6664e9f907ee9a9a7dc9bb9f72a}\label{group___i_i_rfilter_pt_by_pt_gac4abd6664e9f907ee9a9a7dc9bb9f72a_gac4abd6664e9f907ee9a9a7dc9bb9f72a}} 
+\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}!IIR\_2ndOrderSignalFilteringPtByPt@{IIR\_2ndOrderSignalFilteringPtByPt}}
+\index{IIR\_2ndOrderSignalFilteringPtByPt@{IIR\_2ndOrderSignalFilteringPtByPt}!IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+\subsubsection{\texorpdfstring{IIR\_2ndOrderSignalFilteringPtByPt()}{IIR\_2ndOrderSignalFilteringPtByPt()}}
+{\footnotesize\ttfamily void I\+I\+R\+\_\+2nd\+Order\+Signal\+Filtering\+Pt\+By\+Pt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i_i_r2nd_order_filter_obj}{I\+I\+R2nd\+Order\+Filter\+Obj}} $\ast$}]{filter\+Object,  }\item[{float}]{signal,  }\item[{float $\ast$}]{result }\end{DoxyParamCaption})}
+
+
+
+Function for recursive Infinite Impulse Response 2nd order filtering of input signal point-\/by-\/point. 
+
+\begin{DoxyWarning}{Warning}
+This I\+IR filter implemantation can be used only when first reverse coefficient value == 1 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filter\+Object} & Pointer to structure of 2nd order I\+IR filter \\
+\hline
+\mbox{\texttt{ in}}  & {\em signal} & Input signal last sample \\
+\hline
+\mbox{\texttt{ out}}  & {\em result} & Output filtered signal sample \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file I\+I\+Rfilter\+Pt\+By\+Pt.\+c.
+
+\mbox{\Hypertarget{group___i_i_rfilter_pt_by_pt_gaf289af032ed0838cac25efd5cc1ea639_gaf289af032ed0838cac25efd5cc1ea639}\label{group___i_i_rfilter_pt_by_pt_gaf289af032ed0838cac25efd5cc1ea639_gaf289af032ed0838cac25efd5cc1ea639}} 
+\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}!IIR\_2ndOrderSignalFilteringPtByPtInitialize@{IIR\_2ndOrderSignalFilteringPtByPtInitialize}}
+\index{IIR\_2ndOrderSignalFilteringPtByPtInitialize@{IIR\_2ndOrderSignalFilteringPtByPtInitialize}!IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+\subsubsection{\texorpdfstring{IIR\_2ndOrderSignalFilteringPtByPtInitialize()}{IIR\_2ndOrderSignalFilteringPtByPtInitialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_i_r2nd_order_filter_obj}{I\+I\+R2nd\+Order\+Filter\+Obj}} I\+I\+R\+\_\+2nd\+Order\+Signal\+Filtering\+Pt\+By\+Pt\+Initialize (\begin{DoxyParamCaption}\item[{float}]{forward\+Coeff\mbox{[}3\mbox{]},  }\item[{float}]{reverse\+Coeff\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function used for initialization I\+IR 2nd order filter structure used for filtering. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em forward\+Coeff\mbox{[}3\mbox{]}} & Filter forward coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em reverse\+Coeff\mbox{[}3\mbox{]}} & Filter reverse coefficients \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_i_i_r2nd_order_filter_obj}{I\+I\+R2nd\+Order\+Filter\+Obj}} I\+IR 2nd order filter structure 
+\end{DoxyReturn}
+
+
+Definition at line 9 of file I\+I\+Rfilter\+Pt\+By\+Pt.\+c.
+
+\mbox{\Hypertarget{group___i_i_rfilter_pt_by_pt_ga5c85182c2d872ceb73f5e9410b44b361_ga5c85182c2d872ceb73f5e9410b44b361}\label{group___i_i_rfilter_pt_by_pt_ga5c85182c2d872ceb73f5e9410b44b361_ga5c85182c2d872ceb73f5e9410b44b361}} 
+\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}!IIR\_3rdOrderSignalFilteringPtByPt@{IIR\_3rdOrderSignalFilteringPtByPt}}
+\index{IIR\_3rdOrderSignalFilteringPtByPt@{IIR\_3rdOrderSignalFilteringPtByPt}!IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+\subsubsection{\texorpdfstring{IIR\_3rdOrderSignalFilteringPtByPt()}{IIR\_3rdOrderSignalFilteringPtByPt()}}
+{\footnotesize\ttfamily void I\+I\+R\+\_\+3rd\+Order\+Signal\+Filtering\+Pt\+By\+Pt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i_i_r3rd_order_filter_obj}{I\+I\+R3rd\+Order\+Filter\+Obj}} $\ast$}]{filter\+Object,  }\item[{float}]{signal,  }\item[{float $\ast$}]{result }\end{DoxyParamCaption})}
+
+
+
+Function for recursive Infinite Impulse Response 3rd order filtering of input signal point-\/by-\/point. 
+
+\begin{DoxyWarning}{Warning}
+This I\+IR filter implemantation can be used only when first reverse coefficient value == 1 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filter\+Object} & Pointer to structure of 3rd order I\+IR filter \\
+\hline
+\mbox{\texttt{ in}}  & {\em signal} & Input signal last sample \\
+\hline
+\mbox{\texttt{ out}}  & {\em result} & Output filtered signal sample \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file I\+I\+Rfilter\+Pt\+By\+Pt.\+c.
+
+\mbox{\Hypertarget{group___i_i_rfilter_pt_by_pt_gad9f7b6a49c25d0716d840945adde16db_gad9f7b6a49c25d0716d840945adde16db}\label{group___i_i_rfilter_pt_by_pt_gad9f7b6a49c25d0716d840945adde16db_gad9f7b6a49c25d0716d840945adde16db}} 
+\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}!IIR\_3rdOrderSignalFilteringPtByPtInitialize@{IIR\_3rdOrderSignalFilteringPtByPtInitialize}}
+\index{IIR\_3rdOrderSignalFilteringPtByPtInitialize@{IIR\_3rdOrderSignalFilteringPtByPtInitialize}!IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+\subsubsection{\texorpdfstring{IIR\_3rdOrderSignalFilteringPtByPtInitialize()}{IIR\_3rdOrderSignalFilteringPtByPtInitialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_i_r3rd_order_filter_obj}{I\+I\+R3rd\+Order\+Filter\+Obj}} I\+I\+R\+\_\+3rd\+Order\+Signal\+Filtering\+Pt\+By\+Pt\+Initialize (\begin{DoxyParamCaption}\item[{float}]{forward\+Coeff\mbox{[}4\mbox{]},  }\item[{float}]{reverse\+Coeff\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function used for initialization I\+IR 3rd order filter structure used for filtering. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em forward\+Coeff\mbox{[}4\mbox{]}} & Filter forward coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em reverse\+Coeff\mbox{[}4\mbox{]}} & Filter reverse coefficients \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_i_i_r3rd_order_filter_obj}{I\+I\+R3rd\+Order\+Filter\+Obj}} I\+IR 3rd order filter structure 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file I\+I\+Rfilter\+Pt\+By\+Pt.\+c.
+
+\mbox{\Hypertarget{group___i_i_rfilter_pt_by_pt_gaa0781bdc4c0b1a47f265ffb6c2a3261b_gaa0781bdc4c0b1a47f265ffb6c2a3261b}\label{group___i_i_rfilter_pt_by_pt_gaa0781bdc4c0b1a47f265ffb6c2a3261b_gaa0781bdc4c0b1a47f265ffb6c2a3261b}} 
+\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}!IIR\_4thOrderSignalFilteringPtByPt@{IIR\_4thOrderSignalFilteringPtByPt}}
+\index{IIR\_4thOrderSignalFilteringPtByPt@{IIR\_4thOrderSignalFilteringPtByPt}!IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+\subsubsection{\texorpdfstring{IIR\_4thOrderSignalFilteringPtByPt()}{IIR\_4thOrderSignalFilteringPtByPt()}}
+{\footnotesize\ttfamily void I\+I\+R\+\_\+4th\+Order\+Signal\+Filtering\+Pt\+By\+Pt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}} $\ast$}]{filter\+Object,  }\item[{float}]{signal,  }\item[{float $\ast$}]{result }\end{DoxyParamCaption})}
+
+
+
+Function for recursive Infinite Impulse Response 4th order filtering of input signal point-\/by-\/point. 
+
+\begin{DoxyWarning}{Warning}
+This I\+IR filter implemantation can be used only when first reverse coefficient value == 1 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filter\+Object} & Pointer to structure of 4th order I\+IR filter \\
+\hline
+\mbox{\texttt{ in}}  & {\em signal} & Input signal last sample \\
+\hline
+\mbox{\texttt{ out}}  & {\em result} & Output filtered signal sample \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 112 of file I\+I\+Rfilter\+Pt\+By\+Pt.\+c.
+
+\mbox{\Hypertarget{group___i_i_rfilter_pt_by_pt_gaaa95a7e8b259b53ea999d004611acd54_gaaa95a7e8b259b53ea999d004611acd54}\label{group___i_i_rfilter_pt_by_pt_gaaa95a7e8b259b53ea999d004611acd54_gaaa95a7e8b259b53ea999d004611acd54}} 
+\index{IIRfilterPtByPt.h@{IIRfilterPtByPt.h}!IIR\_4thOrderSignalFilteringPtByPtInitialize@{IIR\_4thOrderSignalFilteringPtByPtInitialize}}
+\index{IIR\_4thOrderSignalFilteringPtByPtInitialize@{IIR\_4thOrderSignalFilteringPtByPtInitialize}!IIRfilterPtByPt.h@{IIRfilterPtByPt.h}}
+\subsubsection{\texorpdfstring{IIR\_4thOrderSignalFilteringPtByPtInitialize()}{IIR\_4thOrderSignalFilteringPtByPtInitialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}} I\+I\+R\+\_\+4th\+Order\+Signal\+Filtering\+Pt\+By\+Pt\+Initialize (\begin{DoxyParamCaption}\item[{float}]{forward\+Coeff\mbox{[}5\mbox{]},  }\item[{float}]{reverse\+Coeff\mbox{[}5\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function used for initialization I\+IR 4th order filter structure used for filtering. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em forward\+Coeff\mbox{[}5\mbox{]}} & Filter forward coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em reverse\+Coeff\mbox{[}5\mbox{]}} & Filter reverse coefficients \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_i_i_r4th_order_filter_obj}{I\+I\+R4th\+Order\+Filter\+Obj}} I\+IR 4th order filter structure 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file I\+I\+Rfilter\+Pt\+By\+Pt.\+c.
+

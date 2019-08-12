@@ -1,0 +1,78 @@
+\hypertarget{group___f_i_rfilter_pt_by_pt}{}\section{F\+IR filter point-\/by-\/point}
+\label{group___f_i_rfilter_pt_by_pt}\index{FIR filter point-\/by-\/point@{FIR filter point-\/by-\/point}}
+
+
+Module contains F\+IR filter structure and functions that implement F\+IR filter initialization and filtering. Use of filter initialization function is necessary since this function sets internal F\+IR filter structure fields and zeros out values of circular signal buffer. Circular signal buffer must be longer than number of filter coefficients and must be a power of 2. This buffer must be passed as an argument to initialization function since \mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} structure creates it\textquotesingle{}s own pointer to this buffer. Function returns structure, which must be passed as an argument into a filtering function. Every filter has it\textquotesingle{}s own F\+IR filter structure. Filtering function applays loop unrolling and computes 8 outputs during one loop iteration in order to provide better performance and speed.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}}
+\begin{DoxyCompactList}\small\item\em Structure containing variables and pointers which should be initialized for every F\+IR filter object only once and must be unchanged during program operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} \mbox{\hyperlink{group___f_i_rfilter_pt_by_pt_gae24f77edcdeca201e05d8c2e00e9e6d8_gae24f77edcdeca201e05d8c2e00e9e6d8}{Create\+F\+I\+Rfilter\+Object}} (uint16\+\_\+t signal\+Buffer\+Length, float signal\+Cyclic\+Buffer\mbox{[}$\,$\mbox{]}, uint16\+\_\+t coeff\+Length, float coefficients\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function used for initialization F\+IR filter structure used for filtering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_i_rfilter_pt_by_pt_ga6e77d8e56981d788538c72945b28f84b_ga6e77d8e56981d788538c72945b28f84b}{F\+I\+Rfilter\+Pt\+By\+Pt}} (\mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} $\ast$filter\+Object, float signal, float $\ast$result)
+\begin{DoxyCompactList}\small\item\em Function filtering input signal point-\/by-\/point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module contains F\+IR filter structure and functions that implement F\+IR filter initialization and filtering. Use of filter initialization function is necessary since this function sets internal F\+IR filter structure fields and zeros out values of circular signal buffer. Circular signal buffer must be longer than number of filter coefficients and must be a power of 2. This buffer must be passed as an argument to initialization function since \mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} structure creates it\textquotesingle{}s own pointer to this buffer. Function returns structure, which must be passed as an argument into a filtering function. Every filter has it\textquotesingle{}s own F\+IR filter structure. Filtering function applays loop unrolling and computes 8 outputs during one loop iteration in order to provide better performance and speed. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___f_i_rfilter_pt_by_pt_gae24f77edcdeca201e05d8c2e00e9e6d8_gae24f77edcdeca201e05d8c2e00e9e6d8}\label{group___f_i_rfilter_pt_by_pt_gae24f77edcdeca201e05d8c2e00e9e6d8_gae24f77edcdeca201e05d8c2e00e9e6d8}} 
+\index{FIR filter point-\/by-\/point@{FIR filter point-\/by-\/point}!CreateFIRfilterObject@{CreateFIRfilterObject}}
+\index{CreateFIRfilterObject@{CreateFIRfilterObject}!FIR filter point-\/by-\/point@{FIR filter point-\/by-\/point}}
+\subsubsection{\texorpdfstring{CreateFIRfilterObject()}{CreateFIRfilterObject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} Create\+F\+I\+Rfilter\+Object (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{signal\+Buffer\+Length,  }\item[{float}]{signal\+Cyclic\+Buffer\mbox{[}$\,$\mbox{]},  }\item[{uint16\+\_\+t}]{coeff\+Length,  }\item[{float}]{coefficients\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function used for initialization F\+IR filter structure used for filtering. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em signal\+Buffer\+Length} & Length of cyclic buffer storing signal \\
+\hline
+\mbox{\texttt{ in}}  & {\em signal\+Cyclic\+Buffer\mbox{[}$\,$\mbox{]}} & Cyclic buffer storing signal \\
+\hline
+\mbox{\texttt{ in}}  & {\em coeff\+Length} & Number of filter coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em coefficients\mbox{[}$\,$\mbox{]}} & Filter coefficients \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} F\+IR filter structure 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file F\+I\+Rfilter\+Pt\+By\+Pt.\+c.
+
+\mbox{\Hypertarget{group___f_i_rfilter_pt_by_pt_ga6e77d8e56981d788538c72945b28f84b_ga6e77d8e56981d788538c72945b28f84b}\label{group___f_i_rfilter_pt_by_pt_ga6e77d8e56981d788538c72945b28f84b_ga6e77d8e56981d788538c72945b28f84b}} 
+\index{FIR filter point-\/by-\/point@{FIR filter point-\/by-\/point}!FIRfilterPtByPt@{FIRfilterPtByPt}}
+\index{FIRfilterPtByPt@{FIRfilterPtByPt}!FIR filter point-\/by-\/point@{FIR filter point-\/by-\/point}}
+\subsubsection{\texorpdfstring{FIRfilterPtByPt()}{FIRfilterPtByPt()}}
+{\footnotesize\ttfamily void F\+I\+Rfilter\+Pt\+By\+Pt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_i_rfilter_object}{F\+I\+Rfilter\+Object}} $\ast$}]{filter\+Object,  }\item[{float}]{signal,  }\item[{float $\ast$}]{result }\end{DoxyParamCaption})}
+
+
+
+Function filtering input signal point-\/by-\/point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filter\+Object} & Pointer to F\+IR filter structure \\
+\hline
+\mbox{\texttt{ in}}  & {\em signal} & One sample of input signal \\
+\hline
+\mbox{\texttt{ out}}  & {\em result} & Result of filtering \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file F\+I\+Rfilter\+Pt\+By\+Pt.\+c.
+
